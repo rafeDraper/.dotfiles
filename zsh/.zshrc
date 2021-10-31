@@ -60,3 +60,5 @@ export PATH=/opt/homebrew/bin:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ /opt/homebrew/bin/kubectl ]] && source <(kubectl completion zsh)
+
+alias luamake=/Users/rafaelgarciadealba/lua-language-server/3rd/luamake/luamake

@@ -1,4 +1,5 @@
 require("rafaelgdaa.telescope")
+require("rafaelgdaa.lsp")
 
 P = function(v)
   print(vim.inspect(v))

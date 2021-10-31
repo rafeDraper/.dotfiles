@@ -1,5 +1,5 @@
-local sumneko_root_path = '/home/theprimeagen/personal/lua-language-server'
-local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
+local sumneko_root_path = '/Users/rafaelgarciadealba/lsp-lservers/lua-language-server'
+local sumneko_binary = sumneko_root_path.."/bin/macOS/lua-language-server"
 
 -- Setup nvim-cmp.
 local cmp = require'cmp'
@@ -41,48 +41,15 @@ cmp.setup({
     }
 })
 
---[[
--- Setup lspconfig.
-require('lspconfig')[%YOUR_LSP_SERVER%].setup {
-    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-}-- Setup nvim-cmp.
-    ]]
--- local cmp = require'cmp'
-
 local function config(_config)
     return vim.tbl_deep_extend("force", {
         capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
     }, _config or {})
 end
-require'lspconfig'.tsserver.setup(config())
 
-require'lspconfig'.clangd.setup(config({
-    cmd = { "clangd", "--background-index", "--clang-tidy" },
-    root_dir = function() return vim.loop.cwd() end
-}))
-
-require'lspconfig'.jedi_language_server.setup(config())
-
-require'lspconfig'.svelte.setup(config())
-
-require'lspconfig'.solang.setup(config())
+require'lspconfig'.solargraph.setup(config())
 
 require'lspconfig'.yamlls.setup(config())
-
-require'lspconfig'.gopls.setup(config({
-    cmd = {"gopls", "serve"},
-    settings = {
-        gopls = {
-            analyses = {
-                unusedparams = true,
-            },
-            staticcheck = true,
-        },
-    },
-}))
-
--- who even uses this?
-require'lspconfig'.rust_analyzer.setup(config({}))
 
 require'lspconfig'.sumneko_lua.setup(config({
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
@@ -121,7 +88,7 @@ local opts = {
     show_guides = true,
 }
 
-require('symbols-outline').setup(opts)
+-- require('symbols-outline').setup(opts)
 
 local snippets_paths = function()
     local plugins = { "friendly-snippets" }

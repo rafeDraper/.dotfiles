@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 
 " Completer config
 Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
@@ -25,6 +26,7 @@ Plug 'nvim-treesitter/playground'
 " Snippets
 Plug 'L3MON4D3/LuaSnip'
 Plug 'rafamadriz/friendly-snippets'
+Plug 'saadparwaiz1/cmp_luasnip'
 
 Plug 'darrikonn/vim-gofmt'
 Plug 'arcticicestudio/nord-vim'
