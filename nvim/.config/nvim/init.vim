@@ -28,11 +28,14 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'rafamadriz/friendly-snippets'
 Plug 'saadparwaiz1/cmp_luasnip'
 
-Plug 'darrikonn/vim-gofmt'
-Plug 'arcticicestudio/nord-vim'
+" Git stuff:
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'junegunn/gv.vim'
+Plug 'mhinz/vim-signify'
+
+Plug 'darrikonn/vim-gofmt'
+Plug 'arcticicestudio/nord-vim'
 Plug 'vim-utils/vim-man'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-dispatch'
