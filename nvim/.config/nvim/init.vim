@@ -19,6 +19,10 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 " Prettier
 Plug 'sbdchd/neoformat'
 
+" Neovim Tree
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-tree.lua'
+
 " Neovim Tree shitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'

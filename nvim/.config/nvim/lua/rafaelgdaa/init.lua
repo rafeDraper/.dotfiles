@@ -1,5 +1,6 @@
 require("rafaelgdaa.telescope")
 require("rafaelgdaa.lsp")
+require("rafaelgdaa.nvim-tree")
 
 P = function(v)
   print(vim.inspect(v))
@@ -9,7 +10,7 @@ end
 if pcall(require, 'plenary') then
   RELOAD = require('plenary.reload').reload_module
 
-  R = function(name)
+R = function(name)
     RELOAD(name)
     return require(name)
   end
