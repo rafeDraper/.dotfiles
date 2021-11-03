@@ -1,6 +1,5 @@
 require("rafaelgdaa.telescope")
 require("rafaelgdaa.lsp")
-require("rafaelgdaa.nvim-tree")
 
 P = function(v)
   print(vim.inspect(v))

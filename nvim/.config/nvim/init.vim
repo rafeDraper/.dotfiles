@@ -19,9 +19,10 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 " Prettier
 Plug 'sbdchd/neoformat'
 
-" Neovim Tree
-Plug 'kyazdani42/nvim-web-devicons' " for file icons
-Plug 'kyazdani42/nvim-tree.lua'
+" Nerdtree
+Plug 'preservim/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin' |
+            \ Plug 'ryanoasis/vim-devicons'
 
 " Neovim Tree shitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -60,6 +61,7 @@ let mapleader = " "
 
 lua require("rafaelgdaa")
 
+let g:webdevicons_enable = 1
 lua require'nvim-treesitter.configs'.setup { indent = { enable = true }, highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
 let g:vim_be_good_log_file = 1
 let g:vim_apm_log = 1
