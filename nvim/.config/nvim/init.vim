@@ -2,13 +2,18 @@ set path+=**
 
 call plug#begin('~/.vim/plugged')
 
-" Completer config
+"LSP and  Completer config
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
-Plug 'mattn/emmet-vim'
+Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
+Plug 'onsails/lspkind-nvim'
+
+" Helpers
+Plug 'glepnir/lspsaga.nvim'
+Plug 'simrat39/symbols-outline.nvim'
 
 " Telescope requirements...
 Plug 'nvim-lua/popup.nvim'
@@ -31,8 +36,6 @@ Plug 'nvim-treesitter/playground'
 " Snippets
 Plug 'L3MON4D3/LuaSnip'
 Plug 'rafamadriz/friendly-snippets'
-Plug 'saadparwaiz1/cmp_luasnip'
-Plug 'andrewstuart/vim-kubernetes'
 
 " Git stuff:
 Plug 'tpope/vim-fugitive'

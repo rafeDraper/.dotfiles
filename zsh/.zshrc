@@ -38,8 +38,10 @@ alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias xhr="cd ~/Xion/xhr"
 alias xboard="cd ~/Xion/xboard"
+alias k8s="cd ~/Xion/managed-k8s"
 alias xsurance="cd ~/Xion/xsurance"
 alias nvimconfig="nvim ~/.config/nvim/init.vim"
+alias vim="nvim"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
