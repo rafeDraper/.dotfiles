@@ -32,6 +32,7 @@ Plug 'nvim-treesitter/playground'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'rafamadriz/friendly-snippets'
 Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'andrewstuart/vim-kubernetes'
 
 " Git stuff:
 Plug 'tpope/vim-fugitive'
@@ -62,7 +63,6 @@ let mapleader = " "
 lua require("rafaelgdaa")
 
 let g:webdevicons_enable = 1
-lua require'nvim-treesitter.configs'.setup { indent = { enable = true }, highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
 let g:vim_be_good_log_file = 1
 let g:vim_apm_log = 1
 let g:user_emmet_settings = {
