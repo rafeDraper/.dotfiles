@@ -17,6 +17,9 @@ configs.ls_emmet = {
 	},
 }
 
+-- luasnip setup
+local luasnip = require 'luasnip'
+
 -- Setup nvim-cmp.
 local cmp = require("cmp")
 local source_mapping = {
@@ -44,13 +47,34 @@ cmp.setup({
 			-- vim.fn["UltiSnips#Anon"](args.body)
 		end,
 	},
-	mapping = {
-		["<C-u>"] = cmp.mapping.scroll_docs(-4),
-		["<C-d>"] = cmp.mapping.scroll_docs(4),
-		["<C-Space>"] = cmp.mapping.complete(),
-		["<C-e>"] = cmp.mapping.close(),
-	},
-
+    mapping = {
+    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-d>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
+    ['<Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end,
+    ['<S-Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end,
+  },
     formatting = {
         format = function(entry, vim_item)
             vim_item.kind = lspkind.presets.default[vim_item.kind]
@@ -110,7 +134,14 @@ end
 
 require'lspconfig'.solargraph.setup(config())
 
-require'lspconfig'.yamlls.setup(config())
+require'lspconfig'.yamlls.setup(config({
+    settings = {
+        yaml = {
+           schemas = { kubernetes = "globPattern" },
+      }}
+}))
+
+require'lspconfig'.eslint.setup(config())
 
 require'lspconfig'.sumneko_lua.setup(config({
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
