@@ -45,6 +45,7 @@ Plug 'mhinz/vim-signify'
 
 Plug 'darrikonn/vim-gofmt'
 Plug 'arcticicestudio/nord-vim'
+Plug 'Yggdroot/indentLine'
 Plug 'vim-utils/vim-man'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-dispatch'
