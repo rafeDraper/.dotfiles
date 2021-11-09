@@ -24,8 +24,6 @@ ZSH_THEME="spaceship"
 plugins=(
   asdf
   git
-  ruby
-  rake
   bundler
   zsh-autosuggestions
 )
@@ -42,6 +40,7 @@ alias k8s="cd ~/Xion/managed-k8s"
 alias xsurance="cd ~/Xion/xsurance"
 alias nvimconfig="nvim ~/.config/nvim/init.vim"
 alias vim="nvim"
+alias pgrnd="cd ~/Xion/k8splayground"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -63,4 +62,4 @@ export PATH=/opt/homebrew/bin:$PATH
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ /opt/homebrew/bin/kubectl ]] && source <(kubectl completion zsh)
 
-alias luamake=/Users/rafaelgarciadealba/lua-language-server/3rd/luamake/luamake
+alias luamake=/Users/rafaelgarciadealba/lsp-lservers/lua-language-server/3rd/luamake

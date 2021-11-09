@@ -70,10 +70,10 @@ let g:webdevicons_enable = 1
 let g:vim_be_good_log_file = 1
 let g:vim_apm_log = 1
 let g:user_emmet_settings = {
-  \  'svelte' : {
-  \    'extends' : 'html',
-  \  },
-  \}
+            \  'svelte' : {
+                \    'extends' : 'html',
+                \  },
+                \}
 
 if executable('rg')
     let g:rg_derive_root='true'
@@ -148,8 +148,8 @@ endfun
 com! W w
 
 nmap <leader>nn :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+            \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+            \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 augroup highlight_yank
     autocmd!
@@ -158,7 +158,6 @@ augroup END
 
 augroup RAFA
     autocmd!
-    autocmd BufWritePre lua,cpp,c,h,hpp,cxx,cc Neoformat
+    autocmd BufWritePre * undojoin | Neoformat
     autocmd BufWritePre * %s/\s\+$//e
-    autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
 augroup END
