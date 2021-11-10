@@ -25,7 +25,6 @@ plugins=(
   asdf
   git
   bundler
-  zsh-autosuggestions
 )
 
 # For a full list of active aliases, run `alias`.
@@ -51,8 +50,6 @@ export PATH=/usr/local/mysql/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-znap source marlonrichert/zsh-autocomplete
-zstyle ':autocomplete:*' min-input 3
 
 export PATH="/usr/local/opt/bison/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
