@@ -137,7 +137,7 @@ require'lspconfig'.solargraph.setup(config())
 require'lspconfig'.yamlls.setup(config({
     settings = {
         yaml = {
-           schemas = { kubernetes = "globPattern" },
+           schemas = { Kubernetes = "globPattern" },
       }}
 }))
 

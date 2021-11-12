@@ -22,9 +22,7 @@ ZSH_THEME="spaceship"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  asdf
   git
-  bundler
 )
 
 # For a full list of active aliases, run `alias`.
@@ -40,11 +38,7 @@ alias xsurance="cd ~/Xion/xsurance"
 alias nvimconfig="nvim ~/.config/nvim/init.vim"
 alias vim="nvim"
 alias pgrnd="cd ~/Xion/k8splayground"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-export PATH=/usr/local/mysql/bin:$PATH
+alias luamake=/Users/rafaelgarciadealba/lsp-lservers/lua-language-server/3rd/luamake
 
 # User configuration
 
@@ -55,8 +49,8 @@ export PATH="/usr/local/opt/bison/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH=/opt/homebrew/bin:$PATH
+export PATH=/usr/local/mysql/bin:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ /opt/homebrew/bin/kubectl ]] && source <(kubectl completion zsh)
 
-alias luamake=/Users/rafaelgarciadealba/lsp-lservers/lua-language-server/3rd/luamake
