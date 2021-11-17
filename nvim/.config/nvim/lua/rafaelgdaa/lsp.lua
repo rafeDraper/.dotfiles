@@ -132,14 +132,9 @@ local function config(_config)
     }, _config or {})
 end
 
-require'lspconfig'.solargraph.setup(config())
+require'lspconfig'.solargraph.setup{}
 
-require'lspconfig'.yamlls.setup(config({
-    settings = {
-        yaml = {
-           schemas = { Kubernetes = "globPattern" },
-      }}
-}))
+require'lspconfig'.yamlls.setup{}
 
 require'lspconfig'.eslint.setup(config())
 

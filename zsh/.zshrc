@@ -25,8 +25,6 @@ plugins=(
   git
 )
 
-# For a full list of active aliases, run `alias`.
-
 # Example aliases
 alias py="python3"
 alias zshconfig="nvim ~/.zshrc"
@@ -53,4 +51,5 @@ export PATH=/usr/local/mysql/bin:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ /opt/homebrew/bin/kubectl ]] && source <(kubectl completion zsh)
-
+. /opt/homebrew/opt/asdf/asdf.sh
+. /opt/homebrew/opt/asdf/etc/bash_completion.d/asdf.bash

@@ -23,11 +23,13 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 " Prettier
 Plug 'sbdchd/neoformat'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " Nerdtree
 Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin' |
-            \ Plug 'ryanoasis/vim-devicons'
+            \ Plug 'ryanoasis/vim-devicons' |
+            \ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Neovim Tree shitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -160,4 +162,5 @@ augroup RAFA
     autocmd!
     autocmd BufWritePre * undojoin | Neoformat
     autocmd BufWritePre * %s/\s\+$//e
+    autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
 augroup END
