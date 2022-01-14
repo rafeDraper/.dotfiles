@@ -118,19 +118,13 @@ tabnine:setup({
 	snippet_placeholder = '..',
 })
 
---[[
--- Setup lspconfig.
-require('lspconfig')[%YOUR_LSP_SERVER%].setup {
-    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-}-- Setup nvim-cmp.
-]]
--- local cmp = require'cmp'
-
 local function config(_config)
     return vim.tbl_deep_extend("force", {
         capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
     }, _config or {})
 end
+
+require'lspconfig'.pylsp.setup{}
 
 require'lspconfig'.solargraph.setup{}
 

@@ -1,11 +1,12 @@
 source ~/zsh-snap/znap.zsh
 
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/rafaelgarciadealba/.oh-my-zsh"
 export DOTFILES=$HOME/.dotfiles
+
+#znap source marlonrichert/zsh-autocomplete
+znap source zsh-users/zsh-autosuggestions
+znap source zsh-users/zsh-syntax-highlighting
 
 # Skip verification of insecure directories
 ZSH_DISABLE_COMPFIX="true"
@@ -41,7 +42,7 @@ alias luamake=/Users/rafaelgarciadealba/lsp-lservers/lua-language-server/3rd/lua
 # User configuration
 
 source $ZSH/oh-my-zsh.sh
-source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PATH="/usr/local/opt/bison/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"

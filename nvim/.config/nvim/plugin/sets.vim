@@ -1,5 +1,5 @@
 set guicursor=
-"set relativenumber
+set relativenumber
 set nohlsearch
 set hidden
 set noerrorbells
@@ -19,7 +19,7 @@ set scrolloff=8
 set noshowmode
 set signcolumn=yes
 set isfname+=@-@
-" set ls=0
+set ls=0
 
 " Give more space for displaying messages.
 set cmdheight=1

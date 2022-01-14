@@ -23,7 +23,7 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 " Prettier
 Plug 'sbdchd/neoformat'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+"Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " Nerdtree
 Plug 'preservim/nerdtree' |
@@ -42,6 +42,7 @@ Plug 'rafamadriz/friendly-snippets'
 " Git stuff:
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'vim-airline/vim-airline'
 Plug 'junegunn/gv.vim'
 Plug 'mhinz/vim-signify'
 
@@ -114,7 +115,6 @@ nnoremap <leader>dwm :lua require("vim-with-me").disconnect()<CR>
 nnoremap <leader>gll :let g:_search_term = expand("%")<CR><bar>:Gclog -- %<CR>:call search(g:_search_term)<CR>
 nnoremap <leader>gln :cnext<CR>:call search(_search_term)<CR>
 nnoremap <leader>glp :cprev<CR>:call search(_search_term)<CR>
-
 nnoremap <leader>x :silent !chmod +x %<CR>
 
 vnoremap J :m '>+1<CR>gv=gv
