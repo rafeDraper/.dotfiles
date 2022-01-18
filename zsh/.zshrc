@@ -42,7 +42,6 @@ alias luamake=/Users/rafaelgarciadealba/lsp-lservers/lua-language-server/3rd/lua
 # User configuration
 
 source $ZSH/oh-my-zsh.sh
-# source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PATH="/usr/local/opt/bison/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
