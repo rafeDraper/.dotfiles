@@ -20,7 +20,7 @@ set noshowmode
 set signcolumn=yes
 set isfname+=@-@
 set ls=0
-
+set laststatus=2
 " Give more space for displaying messages.
 set cmdheight=1
 

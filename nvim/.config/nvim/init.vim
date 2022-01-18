@@ -42,7 +42,6 @@ Plug 'rafamadriz/friendly-snippets'
 " Git stuff:
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'vim-airline/vim-airline'
 Plug 'junegunn/gv.vim'
 Plug 'mhinz/vim-signify'
 
