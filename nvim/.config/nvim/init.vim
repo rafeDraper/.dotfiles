@@ -131,6 +131,8 @@ xnoremap <leader>p "_dP
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 nnoremap <leader>Y gg"+yG
+nnoremap <leader>ä "*p
+nnoremap <leader>ö "*y
 
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
