@@ -2,51 +2,20 @@ set path+=**
 
 call plug#begin('~/.vim/plugged')
 
-"LSP and  Completer config
-Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
-Plug 'onsails/lspkind-nvim'
-
-" Helpers
-Plug 'glepnir/lspsaga.nvim'
-Plug 'simrat39/symbols-outline.nvim'
-
-" Telescope requirements...
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzy-native.nvim'
-
-" Prettier
-Plug 'sbdchd/neoformat'
-"Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-
-" Nerdtree
-Plug 'preservim/nerdtree' |
-            \ Plug 'Xuyuanp/nerdtree-git-plugin' |
-            \ Plug 'ryanoasis/vim-devicons' |
-            \ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
-" Neovim Tree shitter
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
-
-" Snippets
-Plug 'L3MON4D3/LuaSnip'
-Plug 'rafamadriz/friendly-snippets'
-
-" Git stuff:
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-Plug 'junegunn/gv.vim'
-Plug 'mhinz/vim-signify'
+source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-lspconfig.vim
+source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-lspsaga.vim
+source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-symbols-outline.vim
+source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-telescope.vim
+source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-neoformat.vim
+source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-nerdtree.vim
+source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-treesitter.vim
+source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-vim-airline.vim
+source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-snippets.vim
+source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-vim-fugitive.vim
 
 Plug 'darrikonn/vim-gofmt'
 Plug 'arcticicestudio/nord-vim'
+Plug 'rmehri01/onenord.nvim', { 'branch': 'main' }
 Plug 'Yggdroot/indentLine'
 Plug 'vim-utils/vim-man'
 Plug 'mbbill/undotree'
@@ -55,18 +24,21 @@ Plug 'theprimeagen/vim-be-good'
 Plug 'tpope/vim-projectionist'
 Plug 'tomlion/vim-solidity'
 Plug 'ThePrimeagen/git-worktree.nvim'
-Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
 " Theme color:
-colorscheme nord
-
-" Maps
-let mapleader = " "
-
+colorscheme onenord
 
 lua require("rafaelgdaa")
+
+" -------------------------------
+" Key maps
+" -------------------------------
+
+" Mapleader:
+let mapleader = " "
+
 
 let g:webdevicons_enable = 1
 let g:vim_be_good_log_file = 1
@@ -83,8 +55,7 @@ endif
 
 let loaded_matchparen = 1
 
-let mapleader = " "
-
+map gf :edit <cfile><cr>
 imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
 inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
 
@@ -150,18 +121,14 @@ endfun
 " ES
 com! W w
 
-nmap <leader>nn :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-            \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-            \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-
-augroup highlight_yank
-    autocmd!
-    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
-augroup END
+augroup YankHighlight
+  autocmd!
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+augroup end
 
 augroup RAFA
-    autocmd!
-    autocmd BufWritePre * undojoin | Neoformat
-    autocmd BufWritePre * %s/\s\+$//e
-    autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
-augroup END
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+  autocmd BufWritePre * %s/\s\+$//e
+  autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
+augroup end
