@@ -89,10 +89,12 @@ nnoremap <leader>x :silent !chmod +x %<CR>
 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+" Yanking remaps
 nnoremap Y yg$
 nnoremap <leader>Y gg"+yG
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
+
 nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
