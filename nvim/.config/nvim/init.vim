@@ -80,8 +80,8 @@ nnoremap <Leader>ee oif err != nil {<CR>log.Fatalf("%+v\n", err)<CR>}<CR><esc>kk
 nnoremap <Leader>cpu a%" PRIu64 "<esc>
 nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 nnoremap <leader>gt <Plug>PlenaryTestFile
-nnoremap <leader>vwm :lua require("vim-with-me").init()<CR>
-nnoremap <leader>dwm :lua require("vim-with-me").disconnect()<CR>
+"nnoremap <leader>vwm :lua require("vim-with-me").init()<CR>
+"nnoremap <leader>dwm :lua require("vim-with-me").disconnect()<CR>
 nnoremap <leader>gll :let g:_search_term = expand("%")<CR><bar>:Gclog -- %<CR>:call search(g:_search_term)<CR>
 nnoremap <leader>gln :cnext<CR>:call search(_search_term)<CR>
 nnoremap <leader>glp :cprev<CR>:call search(_search_term)<CR>
