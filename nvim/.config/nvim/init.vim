@@ -90,17 +90,14 @@ nnoremap <leader>x :silent !chmod +x %<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 nnoremap Y yg$
+nnoremap <leader>Y gg"+yG
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
 nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
 
-" greatest remap ever
 xnoremap <leader>p "_dP
-
-" next greatest remap ever : asbjornHaland
-nnoremap <leader>y "+y
-vnoremap <leader>y "+y
-nnoremap <leader>Y gg"+yG
 nnoremap <leader>ä "*p
 nnoremap <leader>ö "*y
 
