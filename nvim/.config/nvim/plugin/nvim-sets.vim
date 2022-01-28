@@ -21,14 +21,8 @@ set signcolumn=yes
 set isfname+=@-@
 set ls=0
 set laststatus=2
-" Give more space for displaying messages.
 set cmdheight=1
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=50
-
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-
+set updatetime=300 " Reduce time for highlighting other references
+set redrawtime=10000 " Allow more time for loading syntax on large files
+set shortmess+=c " Don't pass messages to |ins-completion-menu|.
 set colorcolumn=80

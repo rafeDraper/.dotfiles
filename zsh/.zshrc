@@ -3,6 +3,8 @@ source ~/zsh-snap/znap.zsh
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/rafaelgarciadealba/.oh-my-zsh"
 export DOTFILES=$HOME/.dotfiles
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 #znap source marlonrichert/zsh-autocomplete
 znap source zsh-users/zsh-autosuggestions
@@ -48,6 +50,7 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
+export DOTFILES=$HOME/.dotfiles
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ /opt/homebrew/bin/kubectl ]] && source <(kubectl completion zsh)

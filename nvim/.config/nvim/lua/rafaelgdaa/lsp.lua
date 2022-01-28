@@ -7,7 +7,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'bashls', 'pylsp', 'solargraph', 'pyright', 'yamlls', 'eslint', 'vimls'}
+local servers = { 'bashls', 'pylsp', 'solargraph', 'pyright', 'yamlls', 'vimls'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     -- on_attach = my_custom_on_attach,
@@ -21,6 +21,11 @@ local function config(_config)
     }, _config or {})
 end
 
+----------------------
+-- LSP Servers config
+----------------------
+
+require'lspconfig'.eslint.setup{}
 require'lspconfig'.sumneko_lua.setup(config({
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
     settings = {

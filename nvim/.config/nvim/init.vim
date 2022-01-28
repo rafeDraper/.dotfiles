@@ -12,18 +12,15 @@ source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-treesitter.vim
 source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-vim-airline.vim
 source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-snippets.vim
 source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-vim-fugitive.vim
-
-Plug 'darrikonn/vim-gofmt'
-Plug 'arcticicestudio/nord-vim'
-Plug 'rmehri01/onenord.nvim', { 'branch': 'main' }
-Plug 'Yggdroot/indentLine'
-Plug 'vim-utils/vim-man'
-Plug 'mbbill/undotree'
-Plug 'tpope/vim-dispatch'
-Plug 'theprimeagen/vim-be-good'
-Plug 'tpope/vim-projectionist'
-Plug 'tomlion/vim-solidity'
-Plug 'ThePrimeagen/git-worktree.nvim'
+source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-themes.vim
+source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-indentline.vim
+source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-vim-man.vim
+source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-undotree.vim
+source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-vim-dispatch.vim
+source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-vim-be-good.vim
+source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-projectionist.vim
+source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-vim-solidify.vim
+source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-git-worktree.vim
 
 call plug#end()
 
@@ -70,7 +67,7 @@ nnoremap <silent> <C-f> :silent !tmux neww tmux-sessionizer<CR>
 
 nnoremap <leader>vwh :h <C-R>=expand("<cword>")<CR><CR>
 nnoremap <leader>bs /<C-R>=escape(expand("<cWORD>"), "/")<CR><CR>
-nnoremap <leader>u :UndotreeShow<CR>
+
 nnoremap <leader>pv :Ex<CR>
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
 nnoremap <Leader>+ :vertical resize +5<CR>
@@ -129,5 +126,5 @@ augroup RAFA
   autocmd!
   autocmd BufWritePre * undojoin | Neoformat
   autocmd BufWritePre * %s/\s\+$//e
-  autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
+  autocmd BufWritePre <buffer> <cmd>EslintFixAll<CR>
 augroup end
