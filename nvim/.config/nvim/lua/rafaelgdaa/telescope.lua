@@ -1,4 +1,3 @@
-
 local finders = require("telescope.finders")
 local previewers = require("telescope.previewers")
 local action_state = require("telescope.actions.state")
@@ -35,10 +34,15 @@ require("telescope").load_extension("fzy_native")
 
 local M = {}
 M.search_dotfiles = function()
-    require("telescope.builtin").find_files({
-        prompt_title = "< VimRC >",
+    require("telescope.builtin").git_files(
+    {
+        prompt_title = "< -- Dotfiles -- >",
         cwd = vim.env.DOTFILES,
-    })
+        shorten_path = false,
+        height = 40
+    }
+)
+
 end
 
 local function refactor(prompt_bufnr)

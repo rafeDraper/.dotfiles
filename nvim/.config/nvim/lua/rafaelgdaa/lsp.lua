@@ -26,6 +26,7 @@ end
 ----------------------
 
 require'lspconfig'.eslint.setup{}
+require'lspconfig'.tsserver.setup{}
 require'lspconfig'.sumneko_lua.setup(config({
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
     settings = {
