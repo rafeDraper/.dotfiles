@@ -21,6 +21,7 @@ source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-vim-be-good.vim
 source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-projectionist.vim
 source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-vim-solidify.vim
 source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-git-worktree.vim
+source ~/.dotfiles/nvim/.config/nvim/plugin/nvim-webdevicons.vim
 
 call plug#end()
 

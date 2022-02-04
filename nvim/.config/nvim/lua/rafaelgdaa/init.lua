@@ -2,6 +2,7 @@ require('rafaelgdaa.telescope')
 require('rafaelgdaa.lsp')
 require('rafaelgdaa.tree-sitter')
 require('rafaelgdaa.options')
+require('rafaelgdaa.webdevicons')
 
 P = function(v)
   print(vim.inspect(v))
