@@ -6,15 +6,6 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 local lspconfig = require('lspconfig')
 
--- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'bashls', 'pylsp', 'solargraph', 'pyright', 'yamlls', 'vimls'}
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    -- on_attach = my_custom_on_attach,
-    capabilities = capabilities,
-  }
-end
-
 local function config(_config)
     return vim.tbl_deep_extend("force", {
         capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -25,6 +16,12 @@ end
 -- LSP Servers config
 ----------------------
 
+require'lspconfig'.bashls.setup{}
+require'lspconfig'.pylsp.setup{}
+require'lspconfig'.pyright.setup{}
+require'lspconfig'.yamlls.setup{}
+require'lspconfig'.vimls.setup{}
+require'lspconfig'.solargraph.setup{}
 require'lspconfig'.eslint.setup{}
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.sumneko_lua.setup(config({
