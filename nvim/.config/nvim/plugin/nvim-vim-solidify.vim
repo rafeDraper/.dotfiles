@@ -1,2 +1,0 @@
-Plug 'tomlion/vim-solidity'
-
