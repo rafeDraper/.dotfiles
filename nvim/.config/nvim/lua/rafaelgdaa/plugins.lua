@@ -31,7 +31,7 @@ end
 
 -- Have packer use a popup window
 packer.init {
-  max_jobs = 4,
+  max_jobs = 4, -- Added this because the popup window was failing.
   display = {
     open_fn = function()
       return require("packer.util").float { border = "rounded" }
@@ -81,7 +81,7 @@ return packer.startup(function(use)
   use "nyngwang/NeoZoom.lua"
   use "SmiteshP/nvim-gps"
   use { "michaelb/sniprun", run = "bash ./install.sh" }
-  -- use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
 
   -- Colorschemes
   use "rebelot/kanagawa.nvim"
@@ -151,8 +151,8 @@ return packer.startup(function(use)
   use "mizlan/iswap.nvim"
 
   -- Git
-  -- use "lewis6991/gitsigns.nvim"
-  use 'tpope/vim-fugitive'
+  use "lewis6991/gitsigns.nvim"
+  --use 'tpope/vim-fugitive'
   use "f-person/git-blame.nvim"
   use "ruifm/gitlinker.nvim"
   use "mattn/vim-gist"
