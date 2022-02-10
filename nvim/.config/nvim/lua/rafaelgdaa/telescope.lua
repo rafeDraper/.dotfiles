@@ -1,36 +1,126 @@
-local finders = require("telescope.finders")
-local previewers = require("telescope.previewers")
-local action_state = require("telescope.actions.state")
-local conf = require("telescope.config").values
-local actions = require("telescope.actions")
+local status_ok, telescope = pcall(require, "telescope")
+if not status_ok then
+  return
+end
 
-require("telescope").setup({
-    defaults = {
-        file_sorter = require("telescope.sorters").get_fzy_sorter,
-        prompt_prefix = " >",
-        color_devicons = true,
+local actions = require "telescope.actions"
+telescope.load_extension "media_files"
+local icons = require("rafaelgdaa.icons")
 
-        file_previewer = require("telescope.previewers").vim_buffer_cat.new,
-        grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
-        qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
+telescope.setup {
+  defaults = {
 
-        mappings = {
-            i = {
-                ["<C-x>"] = false,
-                ["<C-q>"] = actions.send_to_qflist,
-            },
-        },
+    prompt_prefix = icons.ui.Telescope .. " ",
+    selection_caret = " ",
+    path_display = { "smart" },
+
+    mappings = {
+      i = {
+        ["<C-n>"] = actions.cycle_history_next,
+        ["<C-p>"] = actions.cycle_history_prev,
+
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+
+        ["<C-c>"] = actions.close,
+
+        ["<Down>"] = actions.move_selection_next,
+        ["<Up>"] = actions.move_selection_previous,
+
+        ["<CR>"] = actions.select_default,
+        ["<C-x>"] = actions.select_horizontal,
+        ["<C-v>"] = actions.select_vertical,
+        ["<C-t>"] = actions.select_tab,
+
+        ["<C-u>"] = actions.preview_scrolling_up,
+        ["<C-d>"] = actions.preview_scrolling_down,
+
+        ["<PageUp>"] = actions.results_scrolling_up,
+        ["<PageDown>"] = actions.results_scrolling_down,
+
+        ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
+        ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
+        ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
+        ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+        ["<C-l>"] = actions.complete_tag,
+        ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
+      },
+
+      n = {
+        ["<esc>"] = actions.close,
+        ["<CR>"] = actions.select_default,
+        ["<C-x>"] = actions.select_horizontal,
+        ["<C-v>"] = actions.select_vertical,
+        ["<C-t>"] = actions.select_tab,
+
+        ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
+        ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
+        ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
+        ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+
+        ["j"] = actions.move_selection_next,
+        ["k"] = actions.move_selection_previous,
+        ["H"] = actions.move_to_top,
+        ["M"] = actions.move_to_middle,
+        ["L"] = actions.move_to_bottom,
+
+        ["<Down>"] = actions.move_selection_next,
+        ["<Up>"] = actions.move_selection_previous,
+        ["gg"] = actions.move_to_top,
+        ["G"] = actions.move_to_bottom,
+
+        ["<C-u>"] = actions.preview_scrolling_up,
+        ["<C-d>"] = actions.preview_scrolling_down,
+
+        ["<PageUp>"] = actions.results_scrolling_up,
+        ["<PageDown>"] = actions.results_scrolling_down,
+
+        ["?"] = actions.which_key,
+      },
     },
-    extensions = {
-        fzy_native = {
-            override_generic_sorter = false,
-            override_file_sorter = true,
-        },
+  },
+  pickers = {
+    -- Default configuration for builtin pickers goes here:
+    -- picker_name = {
+    --   picker_config_key = value,
+    --   ...
+    -- }
+    -- Now the picker_config_key will be applied every time you call this
+    -- builtin picker
+  },
+  extensions = {
+    media_files = {
+      -- filetypes whitelist
+      -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+      filetypes = { "png", "webp", "jpg", "jpeg" },
+      find_cmd = "rg", -- find command (defaults to `fd`)
     },
-})
+    file_browser = {
+      -- theme = "ivy",
+      -- require("telescope.themes").get_dropdown {
+      --   previewer = false,
+      --   -- even more opts
+      -- },
+      mappings = {
+        ["i"] = {
+          -- your custom insert mode mappings
+        },
+        ["n"] = {
+          -- your custom normal mode mappings
+        },
+      },
+    },
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown {
+        previewer = false,
+        -- even more opts
+      },
+    },
+  },
+}
 
-require("telescope").load_extension("git_worktree")
-require("telescope").load_extension("fzy_native")
+telescope.load_extension "ui-select"
+telescope.load_extension "file_browser"
 
 local M = {}
 M.search_dotfiles = function()
@@ -42,30 +132,6 @@ M.search_dotfiles = function()
         height = 40
     }
 )
-
-end
-
-local function refactor(prompt_bufnr)
-    local content = require("telescope.actions.state").get_selected_entry(
-        prompt_bufnr
-    )
-    require("telescope.actions").close(prompt_bufnr)
-    require("refactoring").refactor(content.value)
-end
-
-M.refactors = function()
-    require("telescope.pickers").new({}, {
-        prompt_title = "refactors",
-        finder = require("telescope.finders").new_table({
-            results = require("refactoring").get_refactors(),
-        }),
-        sorter = require("telescope.config").values.generic_sorter({}),
-        attach_mappings = function(_, map)
-            map("i", "<CR>", refactor)
-            map("n", "<CR>", refactor)
-            return true
-        end,
-    }):find()
 end
 
 M.git_branches = function()
@@ -78,105 +144,10 @@ M.git_branches = function()
     })
 end
 
-M.dev = function(opts)
-    opts = opts or {}
-
-    opts.cwd = opts.cwd or vim.loop.fs_realpath(vim.loop.cwd())
-    print("HEY BAE", opts.cwd)
-
-    local possible_files = vim.api.nvim_get_runtime_file(
-        "/lua/**/dev.lua",
-        true
-    )
-    local local_files = {}
-    for _, raw_f in ipairs(possible_files) do
-        local real_f = vim.loop.fs_realpath(raw_f)
-
-        if string.find(real_f, opts.cwd, 1, true) then
-            table.insert(local_files, real_f)
-        end
-    end
-
-    local dev = local_files[1]
-    local loaded = loadfile(dev)
-    local ok, mod = pcall(loaded)
-    if not ok then
-        print("===================================================")
-        print("HEY PRIME. YOUR CODE DOESNT WORK. THIS IS NOT ON ME")
-        print("===================================================")
-        return
-    end
-
-    -- P(mod)
-    local objs = {}
-    for k, v in pairs(mod) do
-        local debug_info = debug.getinfo(v)
-        table.insert(objs, {
-            filename = string.sub(debug_info.source, 2),
-            text = k,
-        })
-    end
-
-    local mod_name = vim.split(dev, "/lua/")
-    if #mod_name ~= 2 then
-        print("===================================================")
-        print("HEY PRIME. I DO NOT KNOW HOW TO FIND THIS FILE:")
-        print(dev)
-        print("===================================================")
-    end
-    mod_name = string.gsub(mod_name[2], ".lua$", "")
-    mod_name = string.gsub(mod_name, "/", ".")
-
-    pickers.new({
-        finder = finders.new_table({
-            results = objs,
-            entry_maker = function(entry)
-                return {
-                    value = entry,
-                    text = entry.text,
-                    display = entry.text,
-                    ordinal = entry.text,
-                    filename = entry.filename,
-                }
-            end,
-        }),
-        sorter = conf.generic_sorter(opts),
-        previewer = previewers.builtin.new(opts),
-        attach_mappings = function(_, map)
-            actions.select_default:replace(function(...)
-                -- print("SELECTED", vim.inspect(action_state.get_selected_entry()))
-                local entry = action_state.get_selected_entry()
-                actions.close(...)
-
-                mod[entry.value.text]()
-            end)
-
-            map("i", "<tab>", function(...)
-                local entry = action_state.get_selected_entry()
-                actions.close(...)
-
-                vim.schedule(function()
-                    -- vim.cmd(string.format([[normal!]], entry.value.text))
-                    vim.api.nvim_feedkeys(
-                        vim.api.nvim_replace_termcodes(
-                            string.format(
-                                "<esc>:lua require('%s').%s()",
-                                mod_name,
-                                entry.value.text
-                            ),
-                            true,
-                            false,
-                            true
-                        ),
-                        "n",
-                        true
-                    )
-                end)
-            end)
-
-            return true
-        end,
-    }):find()
+M.project_files = function()
+  local opts = {} -- define here if you want to define something
+  local ok = pcall(require"telescope.builtin".git_files, opts)
+  if not ok then require"telescope.builtin".find_files(opts) end
 end
 
 return M
