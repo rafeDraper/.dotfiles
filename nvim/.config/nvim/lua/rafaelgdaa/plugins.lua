@@ -84,8 +84,9 @@ return packer.startup(function(use)
   use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
 
   -- Colorschemes
-  use "rebelot/kanagawa.nvim"
+  use {"arcticicestudio/nord-vim",  branch = "develop"}
   use "rmehri01/onenord.nvim"
+  use "folke/tokyonight"
 
   -- Cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin

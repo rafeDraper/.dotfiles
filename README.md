@@ -5,6 +5,8 @@ Personal dotfiles configuration files, please make any suggestions if find somet
 
 ## Older VIM configuration files
 I just left the my old vim configuration in case. Use the branch:
+```
 'vim-configuration-legacy'
+```
 
-P.S: VSCODE... I do not miss you at all. 
+PS: VSCODE... I do not miss you at all. 

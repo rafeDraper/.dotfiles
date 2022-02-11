@@ -25,8 +25,8 @@ require'nvim-treesitter.configs'.setup({
 		enable = true,
 		colors = {
 			"Gold",
-			"Orchid",
-			"DodgerBlue",
+			"PearlAqua",
+			"LightCoral",
 			--"Cornsilk",
 			--"Salmon",
 			--"LawnGreen",

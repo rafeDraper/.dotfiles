@@ -27,7 +27,7 @@ local options = {
   tabstop = 2,                             -- insert 2 spaces for a tab
   cursorline = true,                       -- highlight the current line
   number = true,                           -- set numbered lines
-  relativenumber = true,                  -- set relative numbered lines
+  relativenumber = true,                   -- set relative numbered lines
   numberwidth = 4,                         -- set number column width to 2 {default 4}
   signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
   wrap = false,                            -- display lines as one long line
@@ -36,32 +36,6 @@ local options = {
   guifont = "monospace:h17"               -- the font used in graphical neovim applications
 }
 
---set guicursor=
---set nohlsearch
---set hidden
---set noerrorbells
---set tabstop=4 softtabstop=4
---set shiftwidth=4
---set expandtab
---set smartindent
---set nu
---set nowrap
---set noswapfile
---set nobackup
---set undofile
---set incsearch
---set termguicolors
---set scrolloff=8
---set noshowmode
---set signcolumn=yes
---set isfname+=@-@
---set ls=0
---set laststatus=2
---set cmdheight=1
---set updatetime=300 " Reduce time for highlighting other references
---set redrawtime=10000 " Allow more time for loading syntax on large files
---set shortmess+=c " Don't pass messages to |ins-completion-menu|.
---set colorcolumn=80
 vim.opt.shortmess:append "c"
 
 for k, v in pairs(options) do
