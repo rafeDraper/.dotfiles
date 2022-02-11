@@ -9,17 +9,15 @@ lsp_installer.on_server_ready(function(server)
   local opts = {
     on_attach = require("rafaelgdaa.lsp.handlers").on_attach,
     capabilities = require("rafaelgdaa.lsp.handlers").capabilities,
-    root_pattern = {}
   }
+  if server.name == "emmet_ls" then
+    local emmet_ls_opts = require "rafaelgdaa.lsp.settings.emmet_ls"
+    opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
+  end
 
   if server.name == "jsonls" then
     local jsonls_opts = require "rafaelgdaa.lsp.settings.jsonls"
     opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
-  end
-
-  if server.name == "sumneko_lua" then
-    local sumneko_opts = require "rafaelgdaa.lsp.settings.sumneko_lua"
-    opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
   end
 
   if server.name == "pyright" then
@@ -27,9 +25,9 @@ lsp_installer.on_server_ready(function(server)
     opts = vim.tbl_deep_extend("force", pyright_opts, opts)
   end
 
-  if server.name == "emmet_ls" then
-    local emmet_ls_opts = require "rafaelgdaa.lsp.settings.emmet_ls"
-    opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
+  if server.name == "sumneko_lua" then
+    local sumneko_opts = require "rafaelgdaa.lsp.settings.sumneko_lua"
+    opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
   end
 
   if server.name == "solargraph" then
@@ -37,10 +35,6 @@ lsp_installer.on_server_ready(function(server)
     opts = vim.tbl_deep_extend("force", solargraph_opts, opts)
   end
 
-  if server.name == "tsserver" then
-    local tsserver_opts = require "rafaelgdaa.lsp.settings.tsserver"
-    opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
-  end
   -- This setup() function is exactly the same as lspconfig's setup function.
   -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
   server:setup(opts)
