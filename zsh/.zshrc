@@ -55,3 +55,4 @@ export PATH=/usr/local/mysql/bin:$PATH
 [[ /opt/homebrew/bin/kubectl ]] && source <(kubectl completion zsh)
 . /opt/homebrew/opt/asdf/asdf.sh
 . /opt/homebrew/opt/asdf/etc/bash_completion.d/asdf.bash
+alias lg='lazygit'

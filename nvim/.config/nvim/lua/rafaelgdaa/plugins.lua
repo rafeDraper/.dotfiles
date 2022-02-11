@@ -86,7 +86,6 @@ return packer.startup(function(use)
   -- Colorschemes
   use {"arcticicestudio/nord-vim",  branch = "develop"}
   use "rmehri01/onenord.nvim"
-  use "folke/tokyonight"
 
   -- Cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -154,6 +153,7 @@ return packer.startup(function(use)
   -- Git
   use "lewis6991/gitsigns.nvim"
   --use 'tpope/vim-fugitive'
+  use "kdheepak/lazygit.nvim"
   use "f-person/git-blame.nvim"
   use "ruifm/gitlinker.nvim"
   use "mattn/vim-gist"
