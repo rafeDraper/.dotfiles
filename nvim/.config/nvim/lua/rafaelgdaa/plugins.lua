@@ -80,7 +80,7 @@ return packer.startup(function(use)
   use "tversteeg/registers.nvim"
   use "nyngwang/NeoZoom.lua"
   use "SmiteshP/nvim-gps"
-  use { "michaelb/sniprun", run = "bash ./install.sh" }
+  -- use { "michaelb/sniprun", run = "bash ./install.sh" }
   use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
 
   -- Colorschemes
@@ -136,8 +136,7 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope-media-files.nvim"
   use "nvim-telescope/telescope-ui-select.nvim"
   use "nvim-telescope/telescope-file-browser.nvim"
-  use "nvim-telescope/telescope-fzy-native.nvim"
-
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",

@@ -1,6 +1,6 @@
 vim.cmd "colorscheme default"
 
-local colorscheme = "nord"
+local colorscheme = "onenord"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 

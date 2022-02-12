@@ -65,9 +65,17 @@ keymap("n", "<F1>", ":e ~/Notes/<cr>", opts)
 keymap("n", "<F3>", ":e .<cr>", opts)
 keymap("n", "<F4>", "<cmd>Telescope resume<cr>", opts)
 keymap("n", "<F5>", "<cmd>Telescope commands<CR>", opts)
-keymap("n", "<Leader>df", "<cmd>lua require('telescope.config').search_dotfiles()<CR>", opts)
-keymap("n", "<Leader>f", "<cmd>lua require('telescope.builtin').git_files()<CR>", opts)
+
+-- Telesccope
+keymap("n", "<Leader>df", "<cmd>lua require('rafaelgdaa.telescope').search_dotfiles()<CR>", opts)
+keymap("n", "<Leader>gb", "<cmd>lua require('rafaelgdaa.telescope').git_branches()<CR>", opts)
+keymap("n", "<C-p>", "<cmd>lua require('telescope.builtin').git_files()<CR>", opts)
 keymap("n", "<Leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>", opts)
+keymap("n", "<Leader>sf", "<cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.expand('<cword>')})<CR>", opts)
+keymap("n", "<Leader>wf", "<cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input('Grep For --> ')})<CR>", opts)
+
+-- Lazygit
+keymap("n", "<Leader>lg", "<cmd>LazyGit<CR>", opts)
 keymap(
   "n",
   "<F6>",

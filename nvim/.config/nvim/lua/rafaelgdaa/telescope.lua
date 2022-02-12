@@ -10,12 +10,18 @@ local icons = require("rafaelgdaa.icons")
 telescope.setup {
   defaults = {
 
+    file_sorter = require("telescope.sorters").get_fzy_sorter,
     prompt_prefix = icons.ui.Telescope .. " ",
     selection_caret = " ",
     path_display = { "smart" },
+    color_devicons = true,
+    --file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+    --grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+    --qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
 
     mappings = {
       i = {
+        ["<esc>"] = actions.close,
         ["<C-n>"] = actions.cycle_history_next,
         ["<C-p>"] = actions.cycle_history_prev,
 
@@ -89,6 +95,13 @@ telescope.setup {
     -- builtin picker
   },
   extensions = {
+    fzf = {
+      fuzzy = true,                    -- false will only do exact matching
+      override_generic_sorter = false,  -- override the generic sorter
+      override_file_sorter = true,     -- override the file sorter
+      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+                                       -- the default case_mode is "smart_case"
+    },
     media_files = {
       -- filetypes whitelist
       -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
@@ -119,19 +132,19 @@ telescope.setup {
   },
 }
 
+-- Telescope extensions:
+telescope.load_extension('fzf')
 telescope.load_extension "ui-select"
 telescope.load_extension "file_browser"
 
 local M = {}
 M.search_dotfiles = function()
-    require("telescope.builtin").git_files(
-    {
+    require("telescope.builtin").find_files({
         prompt_title = "< -- Dotfiles -- >",
         cwd = vim.env.DOTFILES,
         shorten_path = false,
         height = 40
-    }
-)
+    })
 end
 
 M.git_branches = function()
