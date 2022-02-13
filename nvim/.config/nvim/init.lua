@@ -1,6 +1,7 @@
 require("rafaelgdaa.autopairs")
 require("rafaelgdaa.bufferline")
 require("rafaelgdaa.cmp")
+require("rafaelgdaa.comment")
 require("rafaelgdaa.git-blame")
 require("rafaelgdaa.gitsigns")
 require("rafaelgdaa.hop")
