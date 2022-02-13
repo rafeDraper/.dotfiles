@@ -76,6 +76,10 @@ keymap("n", "<Leader>wf", "<cmd>lua require('telescope.builtin').grep_string({ s
 
 -- Lazygit
 keymap("n", "<Leader>lg", "<cmd>LazyGit<CR>", opts)
+
+-- Null-ls formating key
+keymap("n", "<Leader>fd", "<cmd>Format<CR>", opts)
+
 keymap(
   "n",
   "<F6>",
