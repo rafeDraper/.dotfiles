@@ -52,7 +52,6 @@ return packer.startup(function(use)
   use "moll/vim-bbye"
   use "mbbill/undotree"
   use "nvim-lualine/lualine.nvim"
-  use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
@@ -151,7 +150,6 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
-  --use 'tpope/vim-fugitive'
   use "kdheepak/lazygit.nvim"
   use "f-person/git-blame.nvim"
   use "ruifm/gitlinker.nvim"
