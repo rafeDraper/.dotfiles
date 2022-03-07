@@ -50,9 +50,11 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
+export PATH=/Users/rafaelgarciadealba/Library/Python/3.9/bin:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ /opt/homebrew/bin/kubectl ]] && source <(kubectl completion zsh)
 . /opt/homebrew/opt/asdf/asdf.sh
 . /opt/homebrew/opt/asdf/etc/bash_completion.d/asdf.bash
 alias lg='lazygit'
+eval "$(pyenv init -)"

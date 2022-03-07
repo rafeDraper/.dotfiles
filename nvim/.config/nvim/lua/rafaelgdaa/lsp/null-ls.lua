@@ -22,5 +22,7 @@ null_ls.setup({
 		formatting.rubocop.with({ extra_args = { "--auto-correct" } }),
 		diagnostics.eslint,
 		diagnostics.rubocop,
+    diagnostics.yamllint,
+    diagnostics.flake8
 	},
 })
