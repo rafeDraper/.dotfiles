@@ -16,6 +16,7 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -39,7 +40,8 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
-
+-- Press jk fast to enter
+keymap("i", "^^", ":w<CR>", opts)
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
