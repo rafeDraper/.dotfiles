@@ -7,4 +7,3 @@ dap_install.setup({
 	installation_path = vim.fn.stdpath("data") .. "/dapinstall/",
 })
 
-dap_install.config("ruby_vsc", {})

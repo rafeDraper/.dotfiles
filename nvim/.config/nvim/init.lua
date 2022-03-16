@@ -1,6 +1,4 @@
-require('dap.ext.vscode').load_launchjs()
 require('dap-ruby').setup()
-
 require("rafaelgdaa.autopairs")
 require("rafaelgdaa.bufferline")
 require("rafaelgdaa.cmp")
