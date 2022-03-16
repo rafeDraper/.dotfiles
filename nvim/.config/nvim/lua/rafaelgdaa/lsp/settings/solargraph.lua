@@ -2,7 +2,7 @@ return {
   cmd = { "solargraph", "stdio" },
   filetypes = { "ruby" },
   init_options = {
-  formatting = true
+  formatting = false
   },
   settings = {
    solargraph = {

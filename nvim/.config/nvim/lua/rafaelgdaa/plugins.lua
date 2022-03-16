@@ -49,6 +49,7 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-web-devicons"
   use { "kyazdani42/nvim-tree.lua", commit = "f183c7f31197ae499c3420341fb8b275636a49b8" }
   use "akinsho/bufferline.nvim"
+  use "akinsho/toggleterm.nvim"
   use "moll/vim-bbye"
   use "mbbill/undotree"
   use "nvim-lualine/lualine.nvim"
@@ -162,6 +163,7 @@ return packer.startup(function(use)
   use "theHamsta/nvim-dap-virtual-text"
   use "rcarriga/nvim-dap-ui"
   use "Pocco81/DAPInstall.nvim"
+  use "suketa/nvim-dap-ruby"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

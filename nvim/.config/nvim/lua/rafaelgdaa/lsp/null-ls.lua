@@ -19,7 +19,7 @@ null_ls.setup({
 		}),
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
-		formatting.rubocop.with({ extra_args = { "--auto-correct" } }),
+		formatting.rubocop,
 		diagnostics.eslint,
 		diagnostics.rubocop,
     diagnostics.yamllint,
