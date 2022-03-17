@@ -76,9 +76,22 @@ keymap("n", "<Leader><F2>", "<cmd>lua require('dap').step_over()<CR>", opts)
 keymap("n", "<Leader><F3>", "<cmd>lua require('dap').step_into()<CR>", opts)
 keymap("n", "<Leader>1", "<cmd>lua require('dap').toggle_breakpoint()<CR>", opts)
 keymap("n", "<Leader>2", "<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
-keymap("n", "<Leader>3", "<cmd>lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", opts)
+keymap(
+	"n",
+	"<Leader>3",
+	"<cmd>lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>",
+	opts
+)
 keymap("n", "<Leader>^", "<cmd>lua require('dap').repl.open()<CR>", opts)
 keymap("n", "<Leader>^^", "<cmd>lua require('dap').run_last()<CR>", opts)
+
+-- Ultest
+
+keymap("n", "<Leader>t", "<cmd>UltestNearest<CR>", opts)
+keymap("n", "<Leader>ta", "<cmd>Ultest<CR>", opts)
+keymap("n", "<Leader>td", "<cmd>UltestDebug<CR>", opts)
+keymap("n", "<Leader>tl", "<cmd>UltestLast<CR>", opts)
+keymap("n", "<Leader>A", "<cmd>UltestAttach<CR>", opts)
 
 -- Telesccope
 keymap("n", "<Leader>df", "<cmd>lua require('rafaelgdaa.telescope').search_dotfiles()<CR>", opts)

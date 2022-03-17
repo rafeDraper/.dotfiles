@@ -97,6 +97,11 @@ if vim.fn.has "mac" == 1 then
       Information = "",
       Question = "",
       Hint = "",
+      Breakpoint = "",
+      Condition = "",
+      LogPoint = "",
+      Stop = "",
+      Rejected = "",
     },
     misc = {
       Robot = "ﮧ",
