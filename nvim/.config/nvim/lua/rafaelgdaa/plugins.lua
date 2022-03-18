@@ -158,7 +158,10 @@ return packer.startup(function(use)
 	use("mfussenegger/nvim-dap")
 	use("vim-test/vim-test")
 	use({ "rcarriga/vim-ultest", requires = { "vim-test/vim-test" }, run = ":UpdateRemotePlugins" })
-
+	use("suketa/nvim-dap-ruby")
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+	use("Pocco81/DAPInstall.nvim")
+	use("theHamsta/nvim-dap-virtual-text")
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

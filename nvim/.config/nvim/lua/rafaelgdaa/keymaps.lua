@@ -61,29 +61,37 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
--- Custom
-keymap("n", "<esc><esc>", "<cmd>nohlsearch<cr>", opts)
-keymap("n", "<TAB>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-keymap("n", "Q", "<cmd>Bdelete!<CR>", opts)
-keymap("n", "<F1>", ":e ~/Notes/<cr>", opts)
-keymap("n", "<F3>", ":e .<cr>", opts)
-keymap("n", "<F4>", "<cmd>Telescope resume<cr>", opts)
-keymap("n", "<F5>", "<cmd>Telescope commands<CR>", opts)
 
 -- DAP
-keymap("n", "<Leader><F1>", "<cmd>lua require('dap').continue()<CR>", opts)
-keymap("n", "<Leader><F2>", "<cmd>lua require('dap').step_over()<CR>", opts)
-keymap("n", "<Leader><F3>", "<cmd>lua require('dap').step_into()<CR>", opts)
-keymap("n", "<Leader>1", "<cmd>lua require('dap').toggle_breakpoint()<CR>", opts)
-keymap("n", "<Leader>2", "<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
-keymap(
-	"n",
-	"<Leader>3",
-	"<cmd>lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>",
-	opts
-)
-keymap("n", "<Leader>^", "<cmd>lua require('dap').repl.open()<CR>", opts)
-keymap("n", "<Leader>^^", "<cmd>lua require('dap').run_last()<CR>", opts)
+keymap( "n", "<F4>", ":lua require('dapui').toggle()<CR>", opts )
+keymap( "n", "<F5>", ":lua require('dap').toggle_breakpoint()<CR>", opts )
+keymap( "n", "<F9>", ":lua require('dap').continue()<CR>", opts )
+
+keymap( "n", "<F1>", ":lua require('dap').step_over()<CR>", opts )
+keymap( "n", "<F2>", ":lua require('dap').step_into()<CR>", opts )
+keymap( "n", "<F3>", ":lua require('dap').step_out()<CR>", opts )
+
+keymap( "n", "<Leader>dsc", ":lua require('dap').continue()<CR>", opts )
+keymap( "n", "<Leader>dsv", ":lua require('dap').step_over()<CR>", opts )
+keymap( "n", "<Leader>dsi", ":lua require('dap').step_into()<CR>", opts )
+keymap( "n", "<Leader>dso", ":lua require('dap').step_out()<CR>", opts )
+
+keymap( "n", "<Leader>dhh", ":lua require('dap.ui.variables').hover()<CR>", opts )
+keymap( "v", "<Leader>dhv", ":lua require('dap.ui.variables').visual_hover()<CR>", opts )
+
+keymap( "n", "<Leader>duh", ":lua require('dap.ui.widgets').hover()<CR>", opts )
+keymap( "n", "<Leader>duf", ":lua local widgets=require('dap.ui.widgets');widgets.centered_float(widgets.scopes)<CR>", opts )
+
+keymap( "n", "<Leader>dro", ":lua require('dap').repl.open()<CR>", opts )
+keymap( "n", "<Leader>drl", ":lua require('dap').repl.run_last()<CR>", opts)
+
+keymap( "n", "<Leader>dbc", ":lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts )
+keymap( "n", "<Leader>dbm", ":lua require('dap').set_breakpoint({ nil, nil, vim.fn.input('Log point message: ') })<CR>", opts )
+keymap( "n", "<Leader>dbt", ":lua require('dap').toggle_breakpoint()<CR>", opts )
+
+keymap( "n", "<Leader>dc", ":lua require('dap.ui.variables').scopes()<CR>", opts )
+keymap( "n", "<Leader>di", ":lua require('dapui').toggle()<CR>", opts )
+
 
 -- Ultest
 
@@ -117,16 +125,24 @@ keymap("n", "<Leader>lg", "<cmd>LazyGit<CR>", opts)
 -- Null-ls formating key
 keymap("n", "<Leader>fd", "<cmd>Format<CR>", opts)
 
-keymap(
-	"n",
-	"<F6>",
-	[[:echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>]],
-	opts
-)
-keymap("n", "<F7>", "<cmd>TSHighlightCapturesUnderCursor<cr>", opts)
-keymap("n", "<F8>", "<cmd>TSPlaygroundToggle<cr>", opts)
-keymap("n", "<F11>", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-keymap("n", "<F12>", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+-- keymap(
+-- 	"n",
+-- 	"<F6>",
+-- 	[[:echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>]],
+-- 	opts
+-- )
+-- Custom
+keymap("n", "<esc><esc>", "<cmd>nohlsearch<cr>", opts)
+keymap("n", "<TAB>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+keymap("n", "Q", "<cmd>Bdelete!<CR>", opts)
+-- keymap("n", "<F1>", ":e ~/Notes/<cr>", opts)
+-- keymap("n", "<F3>", ":e .<cr>", opts)
+-- keymap("n", "<F4>", "<cmd>Telescope resume<cr>", opts)
+-- keymap("n", "<F5>", "<cmd>Telescope commands<CR>", opts)
+-- keymap("n", "<F7>", "<cmd>TSHighlightCapturesUnderCursor<cr>", opts)
+-- keymap("n", "<F8>", "<cmd>TSPlaygroundToggle<cr>", opts)
+-- keymap("n", "<F11>", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+-- keymap("n", "<F12>", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 keymap("v", "//", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]], opts)
 keymap("n", "<C-t>", "<cmd>lua vim.lsp.buf.document_symbol()<cr>", opts)
 keymap("n", "<C-s>", "<cmd>vsplit<cr>", opts)
