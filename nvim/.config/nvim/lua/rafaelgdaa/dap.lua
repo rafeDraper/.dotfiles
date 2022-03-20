@@ -3,6 +3,10 @@ if not status_ok then
 	return
 end
 
+-- Dap Ruby configuration
+local dap_ruby = require("dap-ruby")
+dap_ruby.setup()
+
 vim.fn.sign_define("DapBreakpoint", { text = "💀", texthl = "", linehl = "", numhl = "" })
 vim.fn.sign_define("DapBreakpointCondition", { text = "🐛", texthl = "", linehl = "", numhl = "" })
 vim.fn.sign_define("DapLogPoint", { text = "🎲", texthl = "", linehl = "", numhl = "" })
