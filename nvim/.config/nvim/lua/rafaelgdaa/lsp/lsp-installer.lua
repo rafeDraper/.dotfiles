@@ -10,6 +10,7 @@ lsp_installer.on_server_ready(function(server)
     on_attach = require("rafaelgdaa.lsp.handlers").on_attach,
     capabilities = require("rafaelgdaa.lsp.handlers").capabilities,
   }
+
   if server.name == "emmet_ls" then
     local emmet_ls_opts = require "rafaelgdaa.lsp.settings.emmet_ls"
     opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
@@ -33,6 +34,11 @@ lsp_installer.on_server_ready(function(server)
   if server.name == "solargraph" then
     local solargraph_opts = require "rafaelgdaa.lsp.settings.solargraph"
     opts = vim.tbl_deep_extend("force", solargraph_opts, opts)
+  end
+
+  if server.name == "golangci_lint_ls" then
+    local golang_opts = require "rafaelgdaa.lsp.settings.golangci_lint_ls"
+    opts = vim.tbl_deep_extend("force", golang_opts, opts)
   end
 
   -- This setup() function is exactly the same as lspconfig's setup function.
