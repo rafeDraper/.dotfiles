@@ -3,9 +3,14 @@ if not status_ok then
 	return
 end
 
+require("rafaelgdaa.dap.dap-install")
+require("rafaelgdaa.dap.dap-virtual-text")
+require("rafaelgdaa.dap.dapui")
+require("rafaelgdaa.dap.ultest")
+
 -- Dap Ruby configuration
--- local dap_ruby = require("dap-ruby")
--- dap_ruby.setup()
+local dap_ruby = require("dap-ruby")
+dap_ruby.setup()
 
 dap.defaults.fallback.terminal_win_cmd = "80vsplit new"
 vim.fn.sign_define("DapBreakpoint", { text = "💀", texthl = "", linehl = "", numhl = "" })
