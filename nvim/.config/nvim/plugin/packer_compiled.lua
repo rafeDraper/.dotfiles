@@ -74,11 +74,6 @@ _G.packer_plugins = {
     path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
-  ["DAPInstall.nvim"] = {
-    loaded = true,
-    path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/DAPInstall.nvim",
-    url = "https://github.com/Pocco81/DAPInstall.nvim"
-  },
   ["FixCursorHold.nvim"] = {
     loaded = true,
     path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
@@ -140,7 +135,7 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/cmp-path"
   },
   ["cmp-tabnine"] = {
-    config = { "\27LJ\2\np\0\0\5\0\4\0\b6\0\0\0'\2\1\0B\0\2\2\18\3\0\0009\1\2\0005\4\3\0B\1\3\1K\0\1\0\1\0\3\14max_lines\3è\a\tsort\2\20max_num_results\3\20\nsetup\23cmp_tabnine.config\frequire\0" },
+    config = { "\27LJ\2\np\0\0\5\0\4\0\b6\0\0\0'\2\1\0B\0\2\2\18\3\0\0009\1\2\0005\4\3\0B\1\3\1K\0\1\0\1\0\3\20max_num_results\3\20\14max_lines\3è\a\tsort\2\nsetup\23cmp_tabnine.config\frequire\0" },
     loaded = true,
     path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
     url = "https://github.com/tzachar/cmp-tabnine"
@@ -264,11 +259,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
-  },
-  ["nvim-dap-ruby"] = {
-    loaded = true,
-    path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/nvim-dap-ruby",
-    url = "https://github.com/suketa/nvim-dap-ruby"
   },
   ["nvim-dap-ui"] = {
     loaded = true,
@@ -508,7 +498,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: cmp-tabnine
 time([[Config for cmp-tabnine]], true)
-try_loadstring("\27LJ\2\np\0\0\5\0\4\0\b6\0\0\0'\2\1\0B\0\2\2\18\3\0\0009\1\2\0005\4\3\0B\1\3\1K\0\1\0\1\0\3\14max_lines\3è\a\tsort\2\20max_num_results\3\20\nsetup\23cmp_tabnine.config\frequire\0", "config", "cmp-tabnine")
+try_loadstring("\27LJ\2\np\0\0\5\0\4\0\b6\0\0\0'\2\1\0B\0\2\2\18\3\0\0009\1\2\0005\4\3\0B\1\3\1K\0\1\0\1\0\3\20max_num_results\3\20\14max_lines\3è\a\tsort\2\nsetup\23cmp_tabnine.config\frequire\0", "config", "cmp-tabnine")
 time([[Config for cmp-tabnine]], false)
 
 -- Command lazy-loads

@@ -3,7 +3,6 @@ if not status_ok then
 	return
 end
 
-require("rafaelgdaa.dap.dap-install")
 require("rafaelgdaa.dap.dap-virtual-text")
 require("rafaelgdaa.dap.dapui")
 require("rafaelgdaa.dap.ultest")
