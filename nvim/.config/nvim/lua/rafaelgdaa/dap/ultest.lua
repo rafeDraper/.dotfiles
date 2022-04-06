@@ -7,62 +7,33 @@ end
 
 local g = vim.g
 g.ultest_use_pty = 1
+g.ultest_output_min_width = 120
+g.ultest_output_max_height = 80
+
 vim["test#ruby#rspec#options"] = "--color=always"
 
--- local M = {}
---
--- function M.post()
--- 	local builders = {
--- 		python = function(cmd)
--- 			local non_modules = { "python", "pipenv", "poetry" }
---
--- 			local module_index
--- 			if vim.tbl_contains(non_modules, cmd[1]) then
--- 				module_index = 3
--- 			else
--- 				module_index = 1
--- 			end
---
--- 			local args = vim.list_slice(cmd, module_index + 1)
---
--- 			return {
--- 				dap = {
--- 					type = "python",
--- 					name = "Ultest Debugger",
--- 					request = "launch",
--- 					module = cmd[module_index],
--- 					args = args,
--- 					justMyCode = false,
--- 				},
--- 			}
--- 		end,
--- 		rdbg = function(cmd)
--- 			local args = {}
---
--- 			for i = 3, #cmd, 1 do
--- 				local arg = cmd[i]
--- 				if vim.startswith(arg, "-") then
--- 					arg = "-test." .. string.sub(arg, 2)
--- 				end
--- 				args[#args + 1] = arg
--- 			end
--- 			print(vim.inspect(args))
--- 			return {
--- 				dap = {
--- 					type = "rdbg",
--- 					request = "launch",
--- 					mode = "test",
--- 					program = "${workspaceFolder}",
--- 					dlvToolPath = vim.fn.exepath("dlv"),
--- 					args = args,
--- 				},
--- 				parse_result = function(lines)
--- 					return lines[#lines] == "FAIL" and 1 or 0
--- 				end,
--- 			}
--- 		end,
--- 	}
--- 	ultest.setup({ builders = builders })
--- end
---
--- return M
+local ruby = function(cmd)
+	-- The command can start with python command directly or an env manager
+	local non_modules = { "rdbg" }
+	-- Index of the python module to run the test.
+	local module_index = 1
+	if vim.tbl_contains(non_modules, cmd[1]) then
+		module_index = 3
+	end
+	local module = cmd[module_index]
+
+	-- Remaining elements are arguments to the module
+	local args = vim.list_slice(cmd, module_index + 1)
+	return {
+		dap = {
+			type = "ruby",
+			request = "launch",
+			module = module,
+			args = args,
+		},
+	}
+end
+
+ultest.setup({
+	builder = { ruby },
+})
