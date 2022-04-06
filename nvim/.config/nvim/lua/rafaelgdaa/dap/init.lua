@@ -10,8 +10,8 @@ require("rafaelgdaa.dap.ultest")
 
 vim.g.dap_virtual_text = true
 -- Dap Ruby configuration
-local dap_ruby = require("dap-ruby")
-dap_ruby.setup()
+-- local dap_ruby = require("dap-ruby")
+-- dap_ruby.setup()
 
 dap.defaults.fallback.terminal_win_cmd = "80vsplit new"
 vim.fn.sign_define("DapBreakpoint", { text = "💀", texthl = "", linehl = "", numhl = "" })
