@@ -61,3 +61,17 @@ export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 . /opt/homebrew/opt/asdf/etc/bash_completion.d/asdf.bash
 alias lg='lazygit'
 eval "$(pyenv init -)"
+
+# Wireguard 
+function stopwg {
+ 
+sudo bash -c 'ls ./.config/wireguard/*.conf' | xargs -n1 sudo wg-quick down
+ 
+}
+
+function startwg {
+ 
+sudo bash -c 'ls ./.config/wireguard/*.conf' | xargs -n1 sudo wg-quick up
+ 
+}
+

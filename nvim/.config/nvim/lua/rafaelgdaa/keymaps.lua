@@ -19,6 +19,7 @@ vim.g.maplocalleader = " "
 
 -- Save with "11"
 keymap("n", "11", ":w<CR>", opts)
+keymap("n", "12", ":wq<CR>", opts)
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
