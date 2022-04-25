@@ -70,7 +70,7 @@ which_key.setup({
 })
 which_key.register({
 	d = {
-		name = "Debug",
+		name = "+Debug",
 		s = {
 			name = "Step",
 			c = { "<cmd>lua require('dap').continue()<CR>", "Continue" },
