@@ -190,10 +190,10 @@ _G.packer_plugins = {
     path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/nlsp-settings.nvim",
     url = "https://github.com/tamago324/nlsp-settings.nvim"
   },
-  ["nord-vim"] = {
+  ["nord.nvim"] = {
     loaded = true,
-    path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/nord-vim",
-    url = "https://github.com/arcticicestudio/nord-vim"
+    path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/nord.nvim",
+    url = "https://github.com/shaunsingh/nord.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,

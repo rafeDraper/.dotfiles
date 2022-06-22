@@ -82,7 +82,8 @@ return packer.startup(function(use)
 	use("glepnir/dashboard-nvim")
 
 	-- Colorschemes
-	use("arcticicestudio/nord-vim")
+	-- use("arcticicestudio/nord-vim")
+	use("shaunsingh/nord.nvim")
 
 	-- Cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
