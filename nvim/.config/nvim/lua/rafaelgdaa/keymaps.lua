@@ -126,12 +126,12 @@ keymap("n", "<Leader>lg", "<cmd>LazyGit<CR>", opts)
 -- Null-ls formating key
 keymap("n", "<Leader>fd", "<cmd>Format<CR>", opts)
 
--- keymap(
--- 	"n",
--- 	"<F6>",
--- 	[[:echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>]],
--- 	opts
--- )
+-- Which key
+keymap("n", "<Leader>k", "<cmd>Which<CR>", opts)
+
+-- Nvim-Tree key
+keymap("n", "<Leader>tt", "<cmd>NvimTreeToggle<CR>", opts)
+
 -- Custom
 keymap("n", "<esc><esc>", "<cmd>nohlsearch<cr>", opts)
 keymap("n", "<TAB>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)

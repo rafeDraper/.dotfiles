@@ -5,7 +5,7 @@ end
 
 require("rafaelgdaa.dap.dap-virtual-text")
 require("rafaelgdaa.dap.dapui")
-require("rafaelgdaa.dap.ultest")
+--require("rafaelgdaa.dap.ultest")
 
 vim.g.dap_virtual_text = true
 dap.adapters.ruby_debug = {

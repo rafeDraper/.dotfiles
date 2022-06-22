@@ -37,7 +37,7 @@ alias xboard="cd ~/Xion/xboard"
 alias k8s="cd ~/Xion/managed-k8s"
 alias xsurance="cd ~/Xion/xsurance"
 alias nvimconfig="nvim ~/.config/nvim/init.vim"
-alias vim="nvim"
+# alias vim="nvim"
 alias pgrnd="cd ~/Xion/k8splayground"
 alias luamake=/Users/rafaelgarciadealba/lsp-lservers/lua-language-server/3rd/luamake
 
@@ -51,14 +51,14 @@ export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
 export PATH=/Users/rafaelgarciadealba/Library/Python/3.9/bin:$PATH
+export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"
 export GOPATH=$HOME/go
 export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ /opt/homebrew/bin/kubectl ]] && source <(kubectl completion zsh)
-. /opt/homebrew/opt/asdf/asdf.sh
-. /opt/homebrew/opt/asdf/etc/bash_completion.d/asdf.bash
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 alias lg='lazygit'
 eval "$(pyenv init -)"
 

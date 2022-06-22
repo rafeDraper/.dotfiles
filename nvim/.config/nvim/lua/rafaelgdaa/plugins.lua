@@ -47,42 +47,42 @@ return packer.startup(function(use)
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	use("numToStr/Comment.nvim")
 	use("kyazdani42/nvim-web-devicons")
-	use({ "kyazdani42/nvim-tree.lua", commit = "f183c7f31197ae499c3420341fb8b275636a49b8" })
-	use("akinsho/bufferline.nvim")
+	use("kyazdani42/nvim-tree.lua")
+	use({ "akinsho/bufferline.nvim", tag = "*", requires = "kyazdani42/nvim-web-devicons" })
 	use("akinsho/toggleterm.nvim")
 	use("moll/vim-bbye")
-	use("mbbill/undotree")
+	-- use("mbbill/undotree")
 	use("nvim-lualine/lualine.nvim")
 	use("ahmedkhalf/project.nvim")
-	use("lewis6991/impatient.nvim")
-	use("lukas-reineke/indent-blankline.nvim")
-	use("goolord/alpha-nvim")
-	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
-	use("folke/which-key.nvim")
-	use("unblevable/quick-scope")
-	use("andymass/vim-matchup")
-	use("nacro90/numb.nvim")
-	use("monaqa/dial.nvim")
-	use("norcalli/nvim-colorizer.lua")
-	use("windwp/nvim-spectre")
-	use("folke/zen-mode.nvim")
-	use("karb94/neoscroll.nvim")
-	use("folke/todo-comments.nvim")
-	use("kevinhwang91/nvim-bqf")
-	use("ThePrimeagen/harpoon")
-	use("MattesGroeger/vim-bookmarks")
-	use("lunarvim/vim-solidity")
-	use("tpope/vim-repeat")
-	use("Shatur/neovim-session-manager")
-	use("rcarriga/nvim-notify")
-	use("tversteeg/registers.nvim")
-	use("nyngwang/NeoZoom.lua")
+	-- use("lewis6991/impatient.nvim")
+	-- use("lukas-reineke/indent-blankline.nvim")
+	-- use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
+	-- use("folke/which-key.nvim")
+	-- use("unblevable/quick-scope")
+	-- use("andymass/vim-matchup")
+	-- use("nacro90/numb.nvim")
+	-- use("monaqa/dial.nvim")
+	-- use("norcalli/nvim-colorizer.lua")
+	-- use("windwp/nvim-spectre")
+	-- use("folke/zen-mode.nvim")
+	-- use("karb94/neoscroll.nvim")
+	-- use("folke/todo-comments.nvim")
+	-- use("kevinhwang91/nvim-bqf")
+	-- use("MattesGroeger/vim-bookmarks")
+	-- use("lunarvim/vim-solidity")
+	-- use("tpope/vim-repeat")
+	-- use("Shatur/neovim-session-manager")
+	-- use("rcarriga/nvim-notify")
+	-- use("tversteeg/registers.nvim")
+	-- use("nyngwang/NeoZoom.lua")
 	use("SmiteshP/nvim-gps")
-	-- use { "michaelb/sniprun", run = "bash ./install.sh" }
+	-- use("davidgranstrom/nvim-markdown-preview")
+
+	-- DASHBOARD
+	use("glepnir/dashboard-nvim")
 
 	-- Colorschemes
-	use({ "arcticicestudio/nord-vim", branch = "develop" })
-	use("rmehri01/onenord.nvim")
+	use("arcticicestudio/nord-vim")
 
 	-- Cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -134,6 +134,7 @@ return packer.startup(function(use)
 	use("nvim-telescope/telescope-ui-select.nvim")
 	use("nvim-telescope/telescope-file-browser.nvim")
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
@@ -143,8 +144,8 @@ return packer.startup(function(use)
 	use("p00f/nvim-ts-rainbow")
 	use("nvim-treesitter/playground")
 	use("windwp/nvim-ts-autotag")
-	use("romgrk/nvim-treesitter-context")
-	use("mizlan/iswap.nvim")
+	-- use("romgrk/nvim-treesitter-context")
+	-- use("mizlan/iswap.nvim")
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
@@ -154,11 +155,19 @@ return packer.startup(function(use)
 	use("mattn/vim-gist")
 	use("mattn/webapi-vim")
 
+	-- Test
+	use({
+		"nvim-neotest/neotest",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			"antoinemadec/FixCursorHold.nvim",
+			"olimorris/neotest-rspec",
+		},
+	})
+
 	-- DAP
 	use("mfussenegger/nvim-dap")
-	use("vim-test/vim-test")
-	use({ "rcarriga/vim-ultest", requires = { "vim-test/vim-test" }, run = ":UpdateRemotePlugins" })
-	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 	use("theHamsta/nvim-dap-virtual-text")
 
 	-- Automatically set up your configuration after cloning packer.nvim
