@@ -3,6 +3,7 @@ if not status_ok then
 	return
 end
 
+local DashboardFindHistory = dashboard.find_history
 local home = os.getenv("HOME")
 dashboard.preview_command = "cat"
 dashboard.preview_file_path = home .. "/.config/nvim/static/black-ascii-art.txt"

@@ -8,11 +8,47 @@ if not status_gps_ok then
 	return
 end
 
+local icons = require("rafaelgdaa.icons")
+
 local hide_in_width = function()
 	return vim.fn.winwidth(0) > 80
 end
 
-local icons = require("rafaelgdaa.icons")
+local mode_color = {
+  n = "#569cd6",
+  i = "#6a9955",
+  v = "#c586c0",
+  [""] = "#c586c0",
+  V = "#c586c0",
+  c = "#4EC9B0",
+  no = "#569cd6",
+  s = "#ce9178",
+  S = "#ce9178",
+  [""] = "#ce9178",
+  ic = "#dcdcaa",
+  R = "#d16969",
+  Rv = "#d16969",
+  cv = "#569cd6",
+  ce = "#569cd6",
+  r = "#d16969",
+  rm = "#4EC9B0",
+  ["r?"] = "#4EC9B0",
+  ["!"] = "#4EC9B0",
+  t = "#D7BA7D",
+}
+
+local mode = {
+  -- mode component
+  function()
+    return "▊"
+  end,
+  color = function()
+    -- auto change color according to neovims mode
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+  -- padding = { right = 1 },
+  padding = 0,
+}
 
 local diagnostics = {
 	"diagnostics",
@@ -35,6 +71,14 @@ local filename = {
 	"filename",
 	file_status = true,
 	path = 1,
+}
+
+local spaces = {
+  function()
+    return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+  end,
+  padding = 0,
+  separator = "%#SLSeparator#" .. " │" .. "%*",
 }
 
 local branch = {
@@ -68,19 +112,6 @@ local lsp = {
 	icon = " LSP:",
 	color = { gui = "bold" },
 }
--- cool function for progress
-local progress = function()
-	local current_line = vim.fn.line(".")
-	local total_lines = vim.fn.line("$")
-	local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
-	local line_ratio = current_line / total_lines
-	local index = math.ceil(line_ratio * #chars)
-	return chars[index]
-end
-
-local spaces = function()
-	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
-end
 
 local nvim_gps = function()
 	local gps_location = gps.get_location()
@@ -90,6 +121,11 @@ local nvim_gps = function()
 		return gps.get_location()
 	end
 end
+
+local progress = {
+  "progress",
+  color = "SLProgress",
+}
 
 lualine.setup({
 	options = {
@@ -103,7 +139,7 @@ lualine.setup({
 	},
 	sections = {
 		-- lualine_a = { branch, diagnostics },
-		lualine_a = { branch },
+		lualine_a = { mode, branch },
 		lualine_b = { diagnostics },
 		lualine_c = { filename, nvim_gps },
 		-- lualine_c = {

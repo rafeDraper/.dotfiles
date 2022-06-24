@@ -23,13 +23,13 @@ null_ls.setup({
 		formatting.prettier,
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
-    formatting.gofmt,
-    formatting.terraform_fmt,
+		formatting.gofmt,
+		formatting.terraform_fmt,
 		diagnostics.eslint,
-    diagnostics.ansiblelint,
+		diagnostics.ansiblelint,
 		diagnostics.yamllint,
 		diagnostics.flake8,
-    diagnostics.golangci_lint,
-    codeactions.refactoring
+		diagnostics.golangci_lint,
+		codeactions.refactoring,
 	},
 })

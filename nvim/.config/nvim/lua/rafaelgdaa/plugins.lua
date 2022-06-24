@@ -55,12 +55,13 @@ return packer.startup(function(use)
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
-	-- use("folke/which-key.nvim")
+	use("windwp/nvim-spectre")
+	use("SmiteshP/nvim-gps")
+	use("folke/which-key.nvim")
 	-- use("andymass/vim-matchup")
 	-- use("nacro90/numb.nvim")
 	-- use("monaqa/dial.nvim")
 	-- use("norcalli/nvim-colorizer.lua")
-	-- use("windwp/nvim-spectre")
 	-- use("folke/zen-mode.nvim")
 	-- use("karb94/neoscroll.nvim")
 	-- use("folke/todo-comments.nvim")
@@ -72,7 +73,6 @@ return packer.startup(function(use)
 	-- use("rcarriga/nvim-notify")
 	-- use("tversteeg/registers.nvim")
 	-- use("nyngwang/NeoZoom.lua")
-	use("SmiteshP/nvim-gps")
 	-- use("davidgranstrom/nvim-markdown-preview")
 
 	-- DASHBOARD
@@ -81,6 +81,7 @@ return packer.startup(function(use)
 	-- Colorschemes
 	-- use("arcticicestudio/nord-vim")
 	use("shaunsingh/nord.nvim")
+	use("shaunsingh/moonlight.nvim")
 
 	-- Cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin

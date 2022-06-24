@@ -66,8 +66,10 @@ local function lsp_keymaps(bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]])
+	-- vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]])
+	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 end
+
 M.on_attach = function(client, bufnr)
 	-- TODO: refactor this into a method that checks if string in list
 
@@ -95,8 +97,9 @@ end
 function M.enable_format_on_save()
 	vim.cmd([[
     augroup format_on_save
-      autocmd! 
-      autocmd BufWritePre * lua vim.lsp.buf.format({ async = true }) 
+      autocmd!
+      autocmd BufWritePre * lua vim.lsp.buf.formatting()
+      " autocmd BufWritePre * lua vim.lsp.buf.format({ async = true })
     augroup end
   ]])
 	vim.notify("Enabled format on save")
