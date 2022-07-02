@@ -90,24 +90,8 @@ alias lg='lazygit'
 export PATH="/usr/local/opt/bison/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-export PATH=/opt/homebrew/bin:$PATH
-export PATH=/usr/local/mysql/bin:$PATH
-export PATH=/Users/rafaelgarciadealba/Library/Python/3.9/bin:$PATH
-export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"
 export GOPATH=$HOME/go
-export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
-# Wireguard 
-function stopwg {
- 
-sudo bash -c 'ls ./.config/wireguard/*.conf' | xargs -n1 sudo wg-quick down
- 
-}
-
-function startwg {
- 
-sudo bash -c 'ls ./.config/wireguard/*.conf' | xargs -n1 sudo wg-quick up
- 
-}
-
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias lg='lazygit'
