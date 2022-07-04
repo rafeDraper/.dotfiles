@@ -37,7 +37,7 @@ alias xboard="cd ~/Xion/xboard"
 alias k8s="cd ~/Xion/managed-k8s"
 alias xsurance="cd ~/Xion/xsurance"
 alias nvimconfig="nvim ~/.config/nvim/init.vim"
-# alias vim="nvim"
+alias v="nvim"
 alias pgrnd="cd ~/Xion/k8splayground"
 alias luamake=/Users/rafaelgarciadealba/lsp-lservers/lua-language-server/3rd/luamake
 

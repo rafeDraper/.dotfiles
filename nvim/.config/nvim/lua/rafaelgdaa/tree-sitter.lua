@@ -8,28 +8,29 @@ ft_to_parser.motoko = "typescript"
 
 configs.setup({
 	ensure_installed = {
-    "bash",
-    "comment",
-    "css",
-    "dockerfile",
-    "erlang",
-    "go",
-    "html",
-    "http",
-    "javascript",
-    "json",
-    "lua",
-    "make",
-    "ninja",
-    "python",
-    "regex",
-    "ruby",
-    "scss",
-    "typescript",
-    "vim",
-    "yaml",
-  }, -- one of "all" or a list of languages
-	sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
+		"bash",
+		"comment",
+		"css",
+		"dockerfile",
+		"erlang",
+		"go",
+		"html",
+		"http",
+		"javascript",
+		"json",
+		"lua",
+		"make",
+		"ninja",
+		"python",
+		"regex",
+		"ruby",
+		"scss",
+		"typescript",
+		"vim",
+		"yaml",
+		"haskell",
+	}, -- one of "all" or a list of languages
+	sync_install = true, -- install languages synchronously (only applied to `ensure_installed`)
 	ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
 	highlight = {
 		-- use_languagetree = true,

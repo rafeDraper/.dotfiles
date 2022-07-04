@@ -105,29 +105,28 @@ keymap("n", "<Leader>di", ":lua require('dapui').toggle()<CR>", opts)
 
 -- Ultest
 
-keymap("n", "<Leader>t", "<cmd>UltestNearest<CR>", opts)
-keymap("n", "<Leader>ta", "<cmd>Ultest<CR>", opts)
-keymap("n", "<Leader>td", "<cmd>UltestDebug<CR>", opts)
-keymap("n", "<Leader>tl", "<cmd>UltestLast<CR>", opts)
-keymap("n", "<Leader>A", "<cmd>UltestAttach<CR>", opts)
+keymap("n", "<Leader>t1", "<cmd>lua require('neotest').run.run()<CR>", opts)
+keymap("n", "<Leader>t2", "<cmd>lua require('neotest').output.open()<CR>", opts)
+keymap("n", "<Leader>t3", "<cmd>lua require('neotest').summary.toggle()<CR>", opts)
+keymap("n", "<Leader>t4", "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR>", opts)
+keymap("n", "<Leader>td", "<cmd>lua require('neotest').run.run({strategy = 'dap'})<CR>", opts)
+keymap("n", "<Leader>ts", "<cmd>lua require('neotest').run.stop()<CR>", opts)
+keymap("n", "<Leader>ta", "<cmd>lua require('neotest').run.atach()<CR>", opts)
+
+-- Vim-Test
+
+keymap("n", "<Leader>t", "<cmd>TestNearest<CR>", opts)
+keymap("n", "<Leader>T", "<cmd>TestFile<CR>", opts)
+keymap("n", "<Leader>a", "<cmd>TestSuite<CR>", opts)
+keymap("n", "<Leader>l", "<cmd>TestLast<CR>", opts)
+keymap("n", "<Leader>g", "<cmd>TestVisit<CR>", opts)
 
 -- Telesccope
-keymap("n", "<Leader>df", "<cmd>lua require('rafaelgdaa.telescope').search_dotfiles()<CR>", opts)
-keymap("n", "<Leader>gb", "<cmd>lua require('rafaelgdaa.telescope').git_branches()<CR>", opts)
+keymap("n", "<Leader>pd", "<cmd>lua require('rafaelgdaa.telescope').search_dotfiles()<CR>", opts)
+keymap("n", "<Leader>pg", "<cmd>lua require('rafaelgdaa.telescope').git_branches()<CR>", opts)
+keymap("n", "<Leader>pf", "<cmd>lua require('telescope.builtin').find_files()<CR>", opts)
 keymap("n", "<C-p>", "<cmd>lua require('telescope.builtin').git_files()<CR>", opts)
-keymap("n", "<Leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>", opts)
-keymap(
-	"n",
-	"<Leader>sf",
-	"<cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.expand('<cword>')})<CR>",
-	opts
-)
-keymap(
-	"n",
-	"<Leader>wf",
-	"<cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input('Grep For --> ')})<CR>",
-	opts
-)
+keymap("n", "<Leader>ph", "<cmd>lua require('telescope.builtin').help_tags()<CR>", opts)
 
 -- Lazygit
 keymap("n", "<Leader>lg", "<cmd>LazyGit<CR>", opts)
@@ -145,6 +144,13 @@ keymap("n", "<Leader>tt", "<cmd>NvimTreeToggle<CR>", opts)
 keymap("n", "<esc><esc>", "<cmd>nohlsearch<cr>", opts)
 keymap("n", "<TAB>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 keymap("n", "Q", "<cmd>Bdelete!<CR>", opts)
+keymap("v", "//", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]], opts)
+keymap("n", "<C-t>", "<cmd>lua vim.lsp.buf.document_symbol()<cr>", opts)
+keymap("n", "<C-s>", "<cmd>vsplit<cr>", opts)
+keymap("n", "<C-z>", "<cmd>ZenMode<cr>", opts)
+keymap("n", "<c-n>", ":e ~/Notes/<cr>", opts)
+keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
+
 -- keymap("n", "<F1>", ":e ~/Notes/<cr>", opts)
 -- keymap("n", "<F3>", ":e .<cr>", opts)
 -- keymap("n", "<F4>", "<cmd>Telescope resume<cr>", opts)
@@ -153,11 +159,3 @@ keymap("n", "Q", "<cmd>Bdelete!<CR>", opts)
 -- keymap("n", "<F8>", "<cmd>TSPlaygroundToggle<cr>", opts)
 -- keymap("n", "<F11>", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 -- keymap("n", "<F12>", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-keymap("v", "//", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]], opts)
-keymap("n", "<C-t>", "<cmd>lua vim.lsp.buf.document_symbol()<cr>", opts)
-keymap("n", "<C-s>", "<cmd>vsplit<cr>", opts)
-keymap("n", "<C-z>", "<cmd>ZenMode<cr>", opts)
-keymap("n", "<c-n>", ":e ~/Notes/<cr>", opts)
-keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
--- Open and close the Zoom here on the left :)
-vim.api.nvim_set_keymap("n", "<CR>", "<cmd>NeoZoomToggle<CR>", { noremap = true, silent = true, nowait = true })

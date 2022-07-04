@@ -48,7 +48,7 @@ return packer.startup(function(use)
 	use("numToStr/Comment.nvim")
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
-	use({ "akinsho/bufferline.nvim", tag = "*", requires = "kyazdani42/nvim-web-devicons" })
+	use("noib3/nvim-cokeline")
 	use("akinsho/toggleterm.nvim")
 	use("moll/vim-bbye")
 	use("nvim-lualine/lualine.nvim")
@@ -72,14 +72,12 @@ return packer.startup(function(use)
 	-- use("Shatur/neovim-session-manager")
 	-- use("rcarriga/nvim-notify")
 	-- use("tversteeg/registers.nvim")
-	-- use("nyngwang/NeoZoom.lua")
 	-- use("davidgranstrom/nvim-markdown-preview")
 
 	-- DASHBOARD
 	use("glepnir/dashboard-nvim")
 
 	-- Colorschemes
-	-- use("arcticicestudio/nord-vim")
 	use("shaunsingh/nord.nvim")
 	use("shaunsingh/moonlight.nvim")
 
@@ -143,8 +141,6 @@ return packer.startup(function(use)
 	use("p00f/nvim-ts-rainbow")
 	use("nvim-treesitter/playground")
 	use("windwp/nvim-ts-autotag")
-	-- use("romgrk/nvim-treesitter-context")
-	-- use("mizlan/iswap.nvim")
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
@@ -158,16 +154,17 @@ return packer.startup(function(use)
 	use({
 		"nvim-neotest/neotest",
 		requires = {
-			"nvim-lua/plenary.nvim",
-			"nvim-treesitter/nvim-treesitter",
 			"antoinemadec/FixCursorHold.nvim",
 			"olimorris/neotest-rspec",
 		},
 	})
+	use("vim-test/vim-test")
 
 	-- DAP
 	use("mfussenegger/nvim-dap")
+	use("rcarriga/nvim-dap-ui")
 	use("theHamsta/nvim-dap-virtual-text")
+	use("suketa/nvim-dap-ruby")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

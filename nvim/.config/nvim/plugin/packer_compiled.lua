@@ -89,11 +89,6 @@ _G.packer_plugins = {
     path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/SchemaStore.nvim",
     url = "https://github.com/b0o/SchemaStore.nvim"
   },
-  ["bufferline.nvim"] = {
-    loaded = true,
-    path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
-    url = "https://github.com/akinsho/bufferline.nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -125,7 +120,7 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/cmp-path"
   },
   ["cmp-tabnine"] = {
-    config = { "\27LJ\2\np\0\0\5\0\4\0\b6\0\0\0'\2\1\0B\0\2\2\18\3\0\0009\1\2\0005\4\3\0B\1\3\1K\0\1\0\1\0\3\20max_num_results\3\20\14max_lines\3è\a\tsort\2\nsetup\23cmp_tabnine.config\frequire\0" },
+    config = { "\27LJ\2\np\0\0\5\0\4\0\b6\0\0\0'\2\1\0B\0\2\2\18\3\0\0009\1\2\0005\4\3\0B\1\3\1K\0\1\0\1\0\3\20max_num_results\3\20\tsort\2\14max_lines\3è\a\nsetup\23cmp_tabnine.config\frequire\0" },
     loaded = true,
     path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
     url = "https://github.com/tzachar/cmp-tabnine"
@@ -225,10 +220,25 @@ _G.packer_plugins = {
     path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-cokeline"] = {
+    loaded = true,
+    path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/nvim-cokeline",
+    url = "https://github.com/noib3/nvim-cokeline"
+  },
   ["nvim-dap"] = {
     loaded = true,
     path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-ruby"] = {
+    loaded = true,
+    path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/nvim-dap-ruby",
+    url = "https://github.com/suketa/nvim-dap-ruby"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
   },
   ["nvim-dap-virtual-text"] = {
     loaded = true,
@@ -378,6 +388,11 @@ _G.packer_plugins = {
     path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/vim-illuminate",
     url = "https://github.com/RRethy/vim-illuminate"
   },
+  ["vim-test"] = {
+    loaded = true,
+    path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/vim-test",
+    url = "https://github.com/vim-test/vim-test"
+  },
   ["webapi-vim"] = {
     loaded = true,
     path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/webapi-vim",
@@ -393,7 +408,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: cmp-tabnine
 time([[Config for cmp-tabnine]], true)
-try_loadstring("\27LJ\2\np\0\0\5\0\4\0\b6\0\0\0'\2\1\0B\0\2\2\18\3\0\0009\1\2\0005\4\3\0B\1\3\1K\0\1\0\1\0\3\20max_num_results\3\20\14max_lines\3è\a\tsort\2\nsetup\23cmp_tabnine.config\frequire\0", "config", "cmp-tabnine")
+try_loadstring("\27LJ\2\np\0\0\5\0\4\0\b6\0\0\0'\2\1\0B\0\2\2\18\3\0\0009\1\2\0005\4\3\0B\1\3\1K\0\1\0\1\0\3\20max_num_results\3\20\tsort\2\14max_lines\3è\a\nsetup\23cmp_tabnine.config\frequire\0", "config", "cmp-tabnine")
 time([[Config for cmp-tabnine]], false)
 
 -- Command lazy-loads
