@@ -1,7 +1,10 @@
+vim.opt.termguicolors = true
 require("rafaelgdaa.autopairs")
 require("rafaelgdaa.autocommands")
+require("rafaelgdaa.catppuccin")
 require("rafaelgdaa.cmp")
 require("rafaelgdaa.comment")
+require("rafaelgdaa.colorizer")
 require("rafaelgdaa.dap")
 require("rafaelgdaa.dashboard-nvim")
 require("rafaelgdaa.git-blame")

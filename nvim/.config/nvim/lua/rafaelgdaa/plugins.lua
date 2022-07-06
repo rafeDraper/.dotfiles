@@ -58,10 +58,10 @@ return packer.startup(function(use)
 	use("windwp/nvim-spectre")
 	use("SmiteshP/nvim-gps")
 	use("folke/which-key.nvim")
+	use("norcalli/nvim-colorizer.lua")
 	-- use("andymass/vim-matchup")
 	-- use("nacro90/numb.nvim")
 	-- use("monaqa/dial.nvim")
-	-- use("norcalli/nvim-colorizer.lua")
 	-- use("folke/zen-mode.nvim")
 	-- use("karb94/neoscroll.nvim")
 	-- use("folke/todo-comments.nvim")
@@ -79,8 +79,10 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	use("shaunsingh/nord.nvim")
-	use("shaunsingh/moonlight.nvim")
-
+	use({
+		"catppuccin/nvim",
+		as = "catppuccin",
+	})
 	-- Cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
