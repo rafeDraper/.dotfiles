@@ -96,7 +96,7 @@ _G.packer_plugins = {
   },
   catppuccin = {
     loaded = true,
-    path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/catppuccin",
+    path = "/home/rafa/.local/share/nvim/site/pack/packer/start/catppuccin",
     url = "https://github.com/catppuccin/nvim"
   },
   ["cmp-buffer"] = {
@@ -128,12 +128,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rafa/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
-  },
-  ["cmp-tabnine"] = {
-    config = { "\27LJ\2\np\0\0\5\0\4\0\b6\0\0\0'\2\1\0B\0\2\2\18\3\0\0009\1\2\0005\4\3\0B\1\3\1K\0\1\0\1\0\3\tsort\2\14max_lines\3è\a\20max_num_results\3\20\nsetup\23cmp_tabnine.config\frequire\0" },
-    loaded = true,
-    path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
-    url = "https://github.com/tzachar/cmp-tabnine"
   },
   cmp_luasnip = {
     loaded = true,
@@ -190,11 +184,6 @@ _G.packer_plugins = {
     path = "/home/rafa/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  ["moonlight.nvim"] = {
-    loaded = true,
-    path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/moonlight.nvim",
-    url = "https://github.com/shaunsingh/moonlight.nvim"
-  },
   neotest = {
     loaded = true,
     path = "/home/rafa/.local/share/nvim/site/pack/packer/start/neotest",
@@ -209,11 +198,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rafa/.local/share/nvim/site/pack/packer/start/nlsp-settings.nvim",
     url = "https://github.com/tamago324/nlsp-settings.nvim"
-  },
-  ["nord.nvim"] = {
-    loaded = true,
-    path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/nord.nvim",
-    url = "https://github.com/shaunsingh/nord.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -232,12 +216,12 @@ _G.packer_plugins = {
   },
   ["nvim-cokeline"] = {
     loaded = true,
-    path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/nvim-cokeline",
+    path = "/home/rafa/.local/share/nvim/site/pack/packer/start/nvim-cokeline",
     url = "https://github.com/noib3/nvim-cokeline"
   },
   ["nvim-colorizer.lua"] = {
     loaded = true,
-    path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    path = "/home/rafa/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
   ["nvim-dap"] = {
@@ -247,12 +231,12 @@ _G.packer_plugins = {
   },
   ["nvim-dap-ruby"] = {
     loaded = true,
-    path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/nvim-dap-ruby",
+    path = "/home/rafa/.local/share/nvim/site/pack/packer/start/nvim-dap-ruby",
     url = "https://github.com/suketa/nvim-dap-ruby"
   },
   ["nvim-dap-ui"] = {
     loaded = true,
-    path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    path = "/home/rafa/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
     url = "https://github.com/rcarriga/nvim-dap-ui"
   },
   ["nvim-dap-virtual-text"] = {
@@ -335,11 +319,6 @@ _G.packer_plugins = {
     path = "/home/rafa/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
   },
-  ["renamer.nvim"] = {
-    loaded = true,
-    path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/renamer.nvim",
-    url = "https://github.com/filipdutescu/renamer.nvim"
-  },
   ["symbols-outline.nvim"] = {
     loaded = true,
     path = "/home/rafa/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
@@ -381,11 +360,8 @@ _G.packer_plugins = {
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
   ["trouble.nvim"] = {
-    commands = { "TroubleToggle" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/rafa/.local/share/nvim/site/pack/packer/opt/trouble.nvim",
+    loaded = true,
+    path = "/home/rafa/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
   },
   ["vim-bbye"] = {
@@ -405,7 +381,7 @@ _G.packer_plugins = {
   },
   ["vim-test"] = {
     loaded = true,
-    path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/vim-test",
+    path = "/home/rafa/.local/share/nvim/site/pack/packer/start/vim-test",
     url = "https://github.com/vim-test/vim-test"
   },
   ["webapi-vim"] = {
@@ -421,16 +397,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: cmp-tabnine
-time([[Config for cmp-tabnine]], true)
-try_loadstring("\27LJ\2\np\0\0\5\0\4\0\b6\0\0\0'\2\1\0B\0\2\2\18\3\0\0009\1\2\0005\4\3\0B\1\3\1K\0\1\0\1\0\3\tsort\2\14max_lines\3è\a\20max_num_results\3\20\nsetup\23cmp_tabnine.config\frequire\0", "config", "cmp-tabnine")
-time([[Config for cmp-tabnine]], false)
-
--- Command lazy-loads
-time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file TroubleToggle lua require("packer.load")({'trouble.nvim'}, { cmd = "TroubleToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
-time([[Defining lazy-load commands]], false)
-
 if should_profile then save_profiles() end
 
 	time([[Defining packer_plugins]], false)
