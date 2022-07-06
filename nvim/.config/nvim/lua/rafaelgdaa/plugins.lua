@@ -78,7 +78,6 @@ return packer.startup(function(use)
 	use("glepnir/dashboard-nvim")
 
 	-- Colorschemes
-	use("shaunsingh/nord.nvim")
 	use({
 		"catppuccin/nvim",
 		as = "catppuccin",
@@ -116,7 +115,6 @@ return packer.startup(function(use)
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
-	use("filipdutescu/renamer.nvim")
 	use("simrat39/symbols-outline.nvim")
 	use("ray-x/lsp_signature.nvim")
 	use("b0o/SchemaStore.nvim")
@@ -133,7 +131,6 @@ return packer.startup(function(use)
 	use("nvim-telescope/telescope-ui-select.nvim")
 	use("nvim-telescope/telescope-file-browser.nvim")
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",

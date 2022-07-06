@@ -200,11 +200,6 @@ _G.packer_plugins = {
     path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/nlsp-settings.nvim",
     url = "https://github.com/tamago324/nlsp-settings.nvim"
   },
-  ["nord.nvim"] = {
-    loaded = true,
-    path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/nord.nvim",
-    url = "https://github.com/shaunsingh/nord.nvim"
-  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -324,11 +319,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
-  },
-  ["renamer.nvim"] = {
-    loaded = true,
-    path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/renamer.nvim",
-    url = "https://github.com/filipdutescu/renamer.nvim"
   },
   ["symbols-outline.nvim"] = {
     loaded = true,
