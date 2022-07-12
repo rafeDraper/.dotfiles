@@ -115,11 +115,11 @@ keymap("n", "<Leader>ta", "<cmd>lua require('neotest').run.atach()<CR>", opts)
 
 -- Vim-Test
 
-keymap("n", "<Leader>t", "<cmd>TestNearest<CR>", opts)
--- keymap("n", "<Leader>T", "<cmd>TestFile<CR>", opts)
--- keymap("n", "<Leader>a", "<cmd>TestSuite<CR>", opts)
--- keymap("n", "<Leader>l", "<cmd>TestLast<CR>", opts)
--- keymap("n", "<Leader>g", "<cmd>TestVisit<CR>", opts)
+keymap("n", "<Leader>tn", "<cmd>TestNearest<CR>", opts)
+keymap("n", "<Leader>T", "<cmd>TestFile<CR>", opts)
+keymap("n", "<Leader>ta", "<cmd>TestSuite<CR>", opts)
+keymap("n", "<Leader>tl", "<cmd>TestLast<CR>", opts)
+keymap("n", "<Leader>tv", "<cmd>TestVisit<CR>", opts)
 
 -- Telesccope
 keymap("n", "<Leader>pd", "<cmd>lua require('rafaelgdaa.telescope').search_dotfiles()<CR>", opts)
@@ -135,10 +135,10 @@ keymap("n", "<Leader>lg", "<cmd>LazyGit<CR>", opts)
 keymap("n", "<Leader>fd", "<cmd>Format<CR>", opts)
 
 -- Which key
-keymap("n", "<Leader>k", "<cmd>Which<CR>", opts)
+keymap("n", "<Leader>K", "<cmd>Which<CR>", opts)
 
 -- Nvim-Tree key
-keymap("n", "<Leader>tt", "<cmd>NvimTreeToggle<CR>", opts)
+keymap("n", "<Leader>e", "<cmd>NvimTreeToggle<CR>", opts)
 
 -- Custom
 keymap("n", "<esc><esc>", "<cmd>nohlsearch<cr>", opts)
@@ -149,7 +149,7 @@ keymap("n", "<C-t>", "<cmd>lua vim.lsp.buf.document_symbol()<cr>", opts)
 keymap("n", "<C-s>", "<cmd>vsplit<cr>", opts)
 keymap("n", "<C-z>", "<cmd>ZenMode<cr>", opts)
 keymap("n", "<c-n>", ":e ~/Notes/<cr>", opts)
-keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
+-- keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
 
 -- keymap("n", "<F1>", ":e ~/Notes/<cr>", opts)
 -- keymap("n", "<F3>", ":e .<cr>", opts)
