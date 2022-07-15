@@ -4,47 +4,76 @@
         https://github.com/marlonrichert/zsh-snap.git ~/Git/zsh-snap
 
 source ~/Git/zsh-snap/znap.zsh  # Start Znap
+
 # `znap prompt` makes your prompt visible in just 15-40ms!
-znap prompt sindresorhus/pure
+znap source ohmyzsh/ohmyzsh plugins/{colored-man-pages,aliases,common-aliases}
+znap prompt zthxxx/jovial
+# znap prompt sindresorhus/pure
 
 # `znap source` automatically downloads and starts your plugins.
+znap source asdf-vm/asdf asdf.sh
 znap source marlonrichert/zsh-autocomplete
+zstyle ':autocomplete:*' min-input 1
+znap source marlonrichert/zsh-edit
+znap source marlonrichert/zsh-hist
+#
+# bindkey '^[q' push-line-or-edit
+# bindkey -r '^Q' '^[Q'
+#
+ZSH_AUTOSUGGEST_STRATEGY=( history )
 znap source zsh-users/zsh-autosuggestions
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS=( main brackets )
 znap source zsh-users/zsh-syntax-highlighting
+
+# Cache the output of slow commands with `znap eval`.
+# If the first arg is a repo, then the command will run inside it. Plus,
+# whenever you update a repo with `znap pull`, its eval cache gets regenerated
+# automatically.
+znap eval trapd00r/LS_COLORS "$( whence -a dircolors gdircolors ) -b LS_COLORS"
+
+# The cache gets regenerated, too, when the eval command has changed. For
+# example, here we include a variable. So, the cache gets invalidated whenever
+# this variable has changed.
+# znap source marlonrichert/zcolors
+# znap eval   marlonrichert/zcolors "zcolors ${(q)LS_COLORS}"
+
+# Here we include the full path to a command. Since that path includes a
+# version number, the cache will be invalidated when that changes.
+# znap eval asdf-community/asdf-direnv "asdf exec $( asdf which direnv ) hook zsh"
 
 # `znap eval` caches and runs any kind of command output for you.
 znap eval iterm2 'curl -fsSL https://iterm2.com/shell_integration/zsh'
 
-# `znap function` lets you lazy-load features you don't always need.
-znap function _pyenv pyenvn 'eval "$( pyenv init - --no-rehash )"'
+# Combine `znap eval` with `curl` or `wget` to download, cache and source
+# individual files:
+znap eval omz-git 'curl -fsSL \
+    https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/git/git.plugin.zsh'
+
+
+##
+# Defer initilization code with lazily loaded functions created by
+# `znap function`.
+#
+
+# For each of the examples below, the `eval` statement on the right is not
+# executed until you try to execute the associated command or try to use
+# completion on it.
+
+znap function _pyenv pyenv              'eval "$( pyenv init - --no-rehash )"'
 compctl -K    _pyenv pyenv
 
-# Path to your oh-my-zsh installation.
-export DOTFILES=$HOME/.dotfiles
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+znap function _pip_completion pip       'eval "$( pip completion --zsh )"'
+compctl -K    _pip_completion pip
 
-# Skip verification of insecure directories
-ZSH_DISABLE_COMPFIX="true"
+znap function _python_argcomplete pipx  'eval "$( register-python-argcomplete pipx  )"'
+complete -o nospace -o default -o bashdefault \
+           -F _python_argcomplete pipx
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
+znap function _pipenv pipenv            'eval "$( pipenv --completion )"'
+compdef       _pipenv pipenv
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  docker
-  docker-compose
-)
-
-# Example aliases
+# Rafa aliases
 alias py="python3"
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
@@ -57,11 +86,9 @@ alias nvimconfig="nvim ~/.config/nvim/init.vim"
 alias v="nvim"
 alias pgrnd="cd ~/Xion/k8splayground"
 alias luamake=/Users/rafaelgarciadealba/lsp-lservers/lua-language-server/3rd/luamake
+alias lg='lazygit'
 
-# User configuration
-
-source $ZSH/oh-my-zsh.sh
-
+# Rafa PATHS
 export PATH="/usr/local/opt/bison/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
@@ -72,12 +99,6 @@ export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"
 export GOPATH=$HOME/go
 export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[[ /opt/homebrew/bin/kubectl ]] && source <(kubectl completion zsh)
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-alias lg='lazygit'
-eval "$(pyenv init -)"
 
 # Wireguard 
 function stopwg {
