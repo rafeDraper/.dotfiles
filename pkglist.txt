@@ -166,3 +166,6 @@ yay
 zenity
 zram-generator
 zsh
+
+# how to install ---> 
+pacman -Qqe > pkglist.txt
