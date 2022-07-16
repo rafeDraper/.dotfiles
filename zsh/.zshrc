@@ -87,6 +87,10 @@ alias luamake=/Users/rafaelgarciadealba/lsp-lservers/lua-language-server/3rd/lua
 alias lg='lazygit'
 
 # Rafa PATHS
+# User configuration
+
+# source $ZSH/oh-my-zsh.sh
+
 export PATH="/usr/local/opt/bison/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
