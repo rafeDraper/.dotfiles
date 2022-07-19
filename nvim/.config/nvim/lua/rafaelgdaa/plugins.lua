@@ -51,7 +51,6 @@ return packer.startup(function(use)
 	use("noib3/nvim-cokeline")
 	use("akinsho/toggleterm.nvim")
 	use("moll/vim-bbye")
-	use("nvim-lualine/lualine.nvim")
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
@@ -74,14 +73,19 @@ return packer.startup(function(use)
 	-- use("tversteeg/registers.nvim")
 	-- use("davidgranstrom/nvim-markdown-preview")
 
+	-- LINE
+  use("feline-nvim/feline.nvim")
+
 	-- DASHBOARD
 	use("glepnir/dashboard-nvim")
 
-	-- Colorschemes
-	use({
-		"catppuccin/nvim",
-		as = "catppuccin",
-	})
+	-- THEME
+
+	 use({
+	 	"catppuccin/nvim",
+	 	as = "catppuccin",
+	 })
+
 	-- Cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions

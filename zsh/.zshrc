@@ -7,8 +7,9 @@ source ~/Git/zsh-snap/znap.zsh  # Start Znap
 
 # `znap prompt` makes your prompt visible in just 15-40ms!
 znap source ohmyzsh/ohmyzsh plugins/{colored-man-pages,aliases,common-aliases}
-znap prompt zthxxx/jovial
-# znap prompt sindresorhus/pure
+# znap prompt spaceship-prompt/spaceship-prompt
+# znap prompt zthxxx/jovial
+znap prompt sindresorhus/pure
 
 # `znap source` automatically downloads and starts your plugins.
 znap source asdf-vm/asdf asdf.sh

@@ -5,15 +5,6 @@ if not status_ok then
 end
 
 vim.g.cursorhold_updatetime = 200
-print(vim.g.cursorhold_updatetime == 200)
--- hi default UltestPass ctermfg=Green guifg=#96F291
--- hi default UltestFail ctermfg=Red guifg=#F70067
--- hi default UltestRunning ctermfg=Yellow guifg=#FFEC63
--- hi default UltestDefault ctermfg=Grey guifg=#8B8B8B
--- hi default UltestBorder ctermfg=Red guifg=#F70067
--- hi default UltestSummaryInfo ctermfg=cyan guifg=#00F1F5
--- hi default link UltestSummaryFile UltestSummaryInfo
--- hi default link UltestSummaryNamespace UltestSummaryInfo
 neotest.setup({
 	adapters = {
 		require("neotest-rspec"),
@@ -54,7 +45,7 @@ neotest.setup({
 		final_child_indent = " ",
 		final_child_prefix = "╰",
 		non_collapsible = "─",
-		passed = "😎",
+		passed = "✔",
 		running = "🗘",
 		skipped = "ﰸ",
 		unknown = "?",
