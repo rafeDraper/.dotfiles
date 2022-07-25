@@ -1,4 +1,7 @@
-local catppuccin = require("catppuccin")
+local status_ok, catppuccin = pcall(require, "catppuccin")
+if not status_ok then
+	return
+end
 
 -- configure it
 catppuccin.setup({
@@ -10,7 +13,7 @@ catppuccin.setup({
 	transparent_background = false,
 	term_colors = false,
 	compile = {
-		enabled = false,
+		enabled = true,
 		path = vim.fn.stdpath("cache") .. "/catppuccin",
 	},
 	styles = {
@@ -44,7 +47,7 @@ catppuccin.setup({
 				information = { "underline" },
 			},
 		},
-    -- neotest = true,
+		-- neotest = true,
 		coc_nvim = false,
 		lsp_trouble = false,
 		cmp = true,

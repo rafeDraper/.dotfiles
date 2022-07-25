@@ -37,6 +37,7 @@ packer.init({
 			return require("packer.util").float({ border = "rounded" })
 		end,
 	},
+	auto_reload_compiled = true
 })
 -- Install your plugins here
 return packer.startup(function(use)
@@ -74,17 +75,18 @@ return packer.startup(function(use)
 	-- use("davidgranstrom/nvim-markdown-preview")
 
 	-- LINE
-  use("feline-nvim/feline.nvim")
+	use("feline-nvim/feline.nvim")
 
 	-- DASHBOARD
 	use("glepnir/dashboard-nvim")
 
 	-- THEME
 
-	 use({
-	 	"catppuccin/nvim",
-	 	as = "catppuccin",
-	 })
+	use({
+		"catppuccin/nvim",
+		as = "catppuccin",
+		run = ":CatppuccinCompile",
+	})
 
 	-- Cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
