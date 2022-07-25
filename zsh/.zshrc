@@ -7,9 +7,9 @@ source ~/Git/zsh-snap/znap.zsh  # Start Znap
 
 # `znap prompt` makes your prompt visible in just 15-40ms!
 znap source ohmyzsh/ohmyzsh plugins/{colored-man-pages,aliases,common-aliases}
-# znap prompt spaceship-prompt/spaceship-prompt
+ znap prompt spaceship-prompt/spaceship-prompt
 # znap prompt zthxxx/jovial
-znap prompt sindresorhus/pure
+# znap prompt sindresorhus/pure
 
 # `znap source` automatically downloads and starts your plugins.
 znap source asdf-vm/asdf asdf.sh
@@ -42,9 +42,6 @@ znap eval trapd00r/LS_COLORS "$( whence -a dircolors gdircolors ) -b LS_COLORS"
 # Here we include the full path to a command. Since that path includes a
 # version number, the cache will be invalidated when that changes.
 # znap eval asdf-community/asdf-direnv "asdf exec $( asdf which direnv ) hook zsh"
-
-# `znap eval` caches and runs any kind of command output for you.
-znap eval iterm2 'curl -fsSL https://iterm2.com/shell_integration/zsh'
 
 # Combine `znap eval` with `curl` or `wget` to download, cache and source
 # individual files:
