@@ -185,6 +185,11 @@ _G.packer_plugins = {
     path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
     url = "https://github.com/ray-x/lsp_signature.nvim"
   },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
+  },
   neotest = {
     loaded = true,
     path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/neotest",
@@ -249,11 +254,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/nvim-gps",
     url = "https://github.com/SmiteshP/nvim-gps"
-  },
-  ["nvim-lsp-installer"] = {
-    loaded = true,
-    path = "/Users/rafaelgarciadealba/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
-    url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
     loaded = true,

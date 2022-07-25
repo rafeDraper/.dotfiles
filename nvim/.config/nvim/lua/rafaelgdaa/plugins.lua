@@ -37,7 +37,7 @@ packer.init({
 			return require("packer.util").float({ border = "rounded" })
 		end,
 	},
-	auto_reload_compiled = true
+	auto_reload_compiled = true,
 })
 -- Install your plugins here
 return packer.startup(function(use)
@@ -73,7 +73,10 @@ return packer.startup(function(use)
 	-- use("rcarriga/nvim-notify")
 	-- use("tversteeg/registers.nvim")
 	-- use("davidgranstrom/nvim-markdown-preview")
+	-- use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 
+	-- Mason installs lsps,daps,formaters
+	use("williamboman/mason.nvim")
 	-- LINE
 	use("feline-nvim/feline.nvim")
 
@@ -81,7 +84,6 @@ return packer.startup(function(use)
 	use("glepnir/dashboard-nvim")
 
 	-- THEME
-
 	use({
 		"catppuccin/nvim",
 		as = "catppuccin",
@@ -117,7 +119,6 @@ return packer.startup(function(use)
 
 	-- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP
-	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	use("simrat39/symbols-outline.nvim")
