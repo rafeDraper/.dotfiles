@@ -76,6 +76,7 @@ return packer.startup(function(use)
 	-- use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 
 	-- Mason installs lsps,daps,formaters
+  use("williamboman/mason-lspconfig.nvim")
 	use("williamboman/mason.nvim")
 	-- LINE
 	use("feline-nvim/feline.nvim")

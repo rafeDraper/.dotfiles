@@ -131,14 +131,8 @@ keymap("n", "<Leader>ph", "<cmd>lua require('telescope.builtin').help_tags()<CR>
 -- Lazygit
 keymap("n", "<Leader>lg", "<cmd>LazyGit<CR>", opts)
 
--- Null-ls formating key
-keymap("n", "<Leader>fd", "<cmd>Format<CR>", opts)
-
--- Which key
-keymap("n", "<Leader>K", "<cmd>Which<CR>", opts)
-
 -- Nvim-Tree key
-keymap("n", "<Leader>e", "<cmd>NvimTreeToggle<CR>", opts)
+keymap("n", "<Leader>5", "<cmd>NvimTreeToggle<CR>", opts)
 
 -- Custom
 keymap("n", "<esc><esc>", "<cmd>nohlsearch<cr>", opts)
