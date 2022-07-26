@@ -156,7 +156,7 @@ font:
   #style: Bold Italic
 
   # Point size
-  size: 15.0
+  size: 16.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -408,8 +408,8 @@ color_schemes:
       white: '#ACB0BE' # surface2
 
     indexed_colors:
-      - {index: 16, color: '#FE640B'}
-      - {index: 17, color: '#DC8A78'}
+      - { index: 16, color: '#FE640B' }
+      - { index: 17, color: '#DC8A78' }
 
   frappe: &frappe # Default colors
     primary:
@@ -487,8 +487,8 @@ color_schemes:
       white: '#B5BFE2' # subtext1
 
     indexed_colors:
-      - {index: 16, color: '#EF9F76'}
-      - {index: 17, color: '#F2D5CF'}
+      - { index: 16, color: '#EF9F76' }
+      - { index: 17, color: '#F2D5CF' }
 
   macchiato: &macchiato # Default colors
     primary:
@@ -566,8 +566,8 @@ color_schemes:
       white: '#B8C0E0' # subtext1
 
     indexed_colors:
-      - {index: 16, color: '#F5A97F'}
-      - {index: 17, color: '#F4DBD6'}
+      - { index: 16, color: '#F5A97F' }
+      - { index: 17, color: '#F4DBD6' }
 
   mocha: &mocha # Default colors
     primary:
@@ -645,8 +645,8 @@ color_schemes:
       white: '#BAC2DE' # subtext1
 
     indexed_colors:
-      - {index: 16, color: '#FAB387'}
-      - {index: 17, color: '#F5E0DC'}
+      - { index: 16, color: '#FAB387' }
+      - { index: 17, color: '#F5E0DC' }
 
 colors: *mocha
 # Bell

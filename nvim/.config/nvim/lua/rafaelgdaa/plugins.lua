@@ -37,6 +37,7 @@ packer.init({
 			return require("packer.util").float({ border = "rounded" })
 		end,
 	},
+	auto_reload_compiled = false,
 })
 -- Install your plugins here
 return packer.startup(function(use)
@@ -51,10 +52,8 @@ return packer.startup(function(use)
 	use("noib3/nvim-cokeline")
 	use("akinsho/toggleterm.nvim")
 	use("moll/vim-bbye")
-	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
-	use("windwp/nvim-spectre")
 	use("SmiteshP/nvim-gps")
 	use("folke/which-key.nvim")
 	use("norcalli/nvim-colorizer.lua")
@@ -72,19 +71,24 @@ return packer.startup(function(use)
 	-- use("rcarriga/nvim-notify")
 	-- use("tversteeg/registers.nvim")
 	-- use("davidgranstrom/nvim-markdown-preview")
+	-- use("williamboman/nvim-lsp-installer") -- simple to use language server installer
+
+	-- Mason installs lsps,daps,formaters
+  use("williamboman/mason-lspconfig.nvim")
+	use("williamboman/mason.nvim")
 
 	-- LINE
-  use("feline-nvim/feline.nvim")
+	use("feline-nvim/feline.nvim")
 
 	-- DASHBOARD
 	use("glepnir/dashboard-nvim")
 
 	-- THEME
-
-	 use({
-	 	"catppuccin/nvim",
-	 	as = "catppuccin",
-	 })
+	use({
+		"catppuccin/nvim",
+		as = "catppuccin",
+		run = ":CatppuccinCompile",
+	})
 
 	-- Cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -115,7 +119,6 @@ return packer.startup(function(use)
 
 	-- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP
-	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	use("simrat39/symbols-outline.nvim")

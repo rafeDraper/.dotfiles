@@ -116,6 +116,10 @@ which_key.register({
 		e = "Edit File", -- same as above
 		["1"] = "which_key_ignore", -- special label to hide it in the popup
 	},
+  m = {
+    name = "Mason",
+    m = { "<cmd>Mason<CR>"}
+  },
 	t = {
 		name = "Testing", -- optional group name
 	},
