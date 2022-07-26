@@ -37,7 +37,7 @@ packer.init({
 			return require("packer.util").float({ border = "rounded" })
 		end,
 	},
-	auto_reload_compiled = true,
+	auto_reload_compiled = false,
 })
 -- Install your plugins here
 return packer.startup(function(use)
@@ -52,10 +52,8 @@ return packer.startup(function(use)
 	use("noib3/nvim-cokeline")
 	use("akinsho/toggleterm.nvim")
 	use("moll/vim-bbye")
-	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
-	use("windwp/nvim-spectre")
 	use("SmiteshP/nvim-gps")
 	use("folke/which-key.nvim")
 	use("norcalli/nvim-colorizer.lua")
@@ -78,6 +76,7 @@ return packer.startup(function(use)
 	-- Mason installs lsps,daps,formaters
   use("williamboman/mason-lspconfig.nvim")
 	use("williamboman/mason.nvim")
+
 	-- LINE
 	use("feline-nvim/feline.nvim")
 

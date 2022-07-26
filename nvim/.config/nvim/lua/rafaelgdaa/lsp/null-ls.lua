@@ -12,7 +12,7 @@ local codeactions = null_ls.builtins.code_actions
 -- https://github.com/prettier-solidity/prettier-plugin-solidity
 -- npm install --save-dev prettier prettier-plugin-solidity
 null_ls.setup({
-	debug = true,
+	debug = false,
 	sources = {
 		formatting.stylua,
 		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
@@ -23,10 +23,5 @@ null_ls.setup({
 		diagnostics.golangci_lint,
 		diagnostics.yamllint,
 		codeactions.eslint_d,
-		-- formatting.black.with({ extra_args = { "--fast" } }),
-		-- formatting.terraform_fmt,
-		-- diagnostics.ansiblelint,
-		-- diagnostics.flake8,
-		-- codeactions.refactoring,
 	},
 })
