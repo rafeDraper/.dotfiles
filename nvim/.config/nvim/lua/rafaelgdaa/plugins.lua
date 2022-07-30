@@ -98,6 +98,7 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-emoji")
 	use("hrsh7th/cmp-nvim-lua")
+  use "hrsh7th/nvim-cmp" --completion
 	use({
 		"tzachar/cmp-tabnine",
 		config = function()
